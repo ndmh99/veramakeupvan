@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_MEDIA } from '../config/media.ts';
+---
+
+<Layout title="Sophisticated Bridal & Editorial Makeup Artist | Vancouver, BC">
+    <Header />
+    
+<!-- PORTFOLIO HERO -->
+    <section class="pt-40 pb-20 bg-alabaster reveal-up active">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="text-xs tracking-[0.4em] uppercase text-taupe block mb-6 font-bold">make-up arts</span>
+            <h1 class="font-serif text-5xl lg:text-7xl leading-[1.1] text-neutral-900 mb-8 max-w-4xl mx-auto">
+                The Portfolio</h1>
+            <div class="w-24 h-px bg-rosegold mx-auto mb-10"></div>
+            <p class="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">Every look is a collaboration, designed to illuminate the individual.
+            </p>
+        </div>
+    </section>
+
+    <!-- GALLERY FILTERS -->
+    <section class="py-8 bg-alabaster sticky top-20 z-30 border-b border-neutral-100 backdrop-blur-md reveal-up active">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-4 md:gap-8 text-[11px] tracking-[0.2em] uppercase font-bold text-neutral-500 font-mono text-sm">
+            <button class="filter-btn text-neutral-900 border-b-2 border-rosegold pb-1 transition-all" data-filter="all">All Work</button>
+            <button class="filter-btn hover:text-taupe transition-all pb-1 border-b-2 border-transparent" data-filter="bridal">Bridal</button>
+            <button class="filter-btn hover:text-taupe transition-all pb-1 border-b-2 border-transparent" data-filter="graduation-career">Graduation|Career</button>
+            <button class="filter-btn hover:text-taupe transition-all pb-1 border-b-2 border-transparent" data-filter="events">Events</button>
+            <button class="filter-btn hover:text-taupe transition-all pb-1 border-b-2 border-transparent" data-filter="creative">Creative</button>
+        </div>
+    </section>
+
+    <!-- MASONRY GALLERY -->
+    <section class="pb-0 pt-20 bg-white reveal-up active">
+        <div class="max-w-7xl mx-auto px-6">
+            <div id="gallery-container" class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 transition-all duration-500">
+              
+                                {SITE_MEDIA.portfolio.gallery.map((item) => (
+                    <div class="relative group overflow-hidden break-inside-avoid gallery-item transition-opacity duration-500" data-tag={item.tags[0]}>
+                        <img src={item.url} alt={item.alt} class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" />
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                            <span class="text-[10px] tracking-widest text-rosegold uppercase mb-2">{item.category}</span>
+                            <h3 class="text-white font-serif text-2xl italic">{item.title}</h3>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- INSTAGRAM INTEGRATION -->
+    <section class="py-10 bg-white reveal-up active">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-0 gap-8">
+                <div class="max-w-xl">
+                    <h2 class="font-serif text-4xl text-neutral-900 italic mb-6">See the Latest Looks from Vancouver</h2>
+                    <p class="text-neutral-500">Join me on Instagram for behind-the-scenes content from weddings, studio test shoots, and event celebrations.<br></p>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/veramakeupvan/" class="bg-neutral-900 text-white px-8 py-4 text-xs tracking-widest uppercase hover:bg-neutral-800 transition-all inline-block" >View Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    
+    <Footer />
+
+<script is:inline>
+    document.addEventListener('astro:page-load', () => {
+        const filters = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.gallery-item');
+        const galleryContainer = document.getElementById('gallery-container');
+        
+        if (!filters.length || !galleryContainer) return;
+
+        filters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button styling
+                filters.forEach(f => {
+                    f.classList.remove('text-neutral-900', 'border-rosegold');
+                    f.classList.add('border-transparent');
+                });
+                btn.classList.remove('border-transparent');
+                btn.classList.add('text-neutral-900', 'border-rosegold');
+
+                // Filter items
+                const filter = btn.getAttribute('data-filter');
+                let visibleCount = 0;
+                
+                items.forEach(item => {
+                    const tag = item.getAttribute('data-tag');
+                    
+                    if (filter === 'all' || tag === filter) {
+                        item.style.display = 'block';
+                        visibleCount++;
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+
+                // Update container columns dynamically
+                setTimeout(() => {
+                    galleryContainer.className = 'gap-6 space-y-6 transition-all duration-500';
+                    if (visibleCount === 1) {
+                        galleryContainer.classList.add('columns-1', 'max-w-3xl', 'mx-auto');
+                    } else if (visibleCount === 2) {
+                        galleryContainer.classList.add('columns-1', 'md:columns-2', 'max-w-5xl', 'mx-auto');
+                    } else {
+                        galleryContainer.classList.add('columns-1', 'md:columns-2', 'lg:columns-3');
+                    }
+                }, 300);
+            });
+        });
+    });
+</script>
+</Layout>

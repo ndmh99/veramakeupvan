@@ -1,0 +1,133 @@
+---
+const currentPath = Astro.url.pathname;
+const isHome = currentPath === '/';
+const isPortfolio = currentPath.includes('/portfolio');
+const isServices = currentPath.includes('/services');
+const isAbout = currentPath.includes('/about');
+const isBlog = currentPath.includes('/blog');
+
+// Helper to determine active classes for Desktop Nav
+const navClass = (isActive: boolean) => 
+  isActive 
+    ? "text-taupe border-b border-taupe" 
+    : "hover:text-taupe transition-colors";
+    
+// Helper to determine active classes for Mobile Nav
+const mobileNavClass = (isActive: boolean) => 
+  isActive 
+    ? "mobile-nav-link flex items-center justify-between rounded-sm border border-rosegold bg-white px-5 py-4 transition-colors" 
+    : "mobile-nav-link flex items-center justify-between rounded-sm border border-neutral-200 bg-white/70 px-5 py-4 hover:bg-neutral-50 transition-colors";
+---
+
+<!-- STICKY HEADER -->
+<header class="fixed top-0 w-full z-50 glass-nav border-b border-neutral-100">
+    <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase text-neutral-600">
+            <a href="/" class={navClass(isHome)}>Home</a>
+            <a href="/portfolio/" class={navClass(isPortfolio)}>Portfolio</a>
+            <a href="/services/" class={navClass(isServices)}>Services</a>
+        </div>
+
+        <div class="absolute left-1/2 -translate-x-1/2">
+            <a href="/" class="font-serif text-2xl tracking-tighter font-medium text-neutral-900">
+                VERA<span class="text-deeprose italic">MAKEUP</span>
+            </a>
+        </div>
+
+        <div class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase text-neutral-600">
+            <a href="/about/" class={navClass(isAbout)}>About</a>
+            <a href="/blog/" class={navClass(isBlog)}>Blog</a>
+            <a href="/services/#contact" class="bg-rosegold text-white px-6 py-3 rounded-sm hover:bg-deeprose transition-all luxury-shadow">
+                Check My Availability
+            </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden text-2xl text-neutral-900" aria-label="Toggle Menu">
+            <i class="bi bi-list"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-alabaster/95 backdrop-blur-xl lg:hidden hidden">
+        <div class="relative h-full w-full">
+            <div class="flex items-center justify-between px-6 h-20 border-b border-neutral-200">
+                <a href="/" class="font-serif text-xl tracking-tighter font-medium text-neutral-900">
+                    VERA<span class="text-deeprose italic">MAKEUP</span>
+                </a>
+                <button id="close-menu-btn" class="flex items-center justify-center aspect-square pr-3 pl-3 p-2 rounded-full border border-neutral-200 bg-white/70 hover:bg-white transition-colors text-neutral-900" aria-label="Close Menu">
+                    <i class="bi bi-x-lg text-xl text-deeprose"></i>
+                </button>
+            </div>
+
+            <div class="px-6 pt-8 pb-10 bg-slate-50">
+                <p class="text-xs tracking-[0.3em] uppercase text-taupe font-medium mb-6">Navigate</p>
+
+                <div class="grid grid-cols-1 gap-3 text-sm font-medium tracking-widest uppercase text-neutral-900">
+                    <a href="/" class={mobileNavClass(isHome)}>
+                        <span class={isHome ? "text-taupe" : ""}>Home</span>
+                        <i class={`bi bi-arrow-right ${isHome ? "text-taupe" : "text-neutral-400"}`}></i>
+                    </a>
+                    <a href="/portfolio/" class={mobileNavClass(isPortfolio)}>
+                        <span class={isPortfolio ? "text-taupe" : ""}>Portfolio</span>
+                        <i class={`bi bi-arrow-right ${isPortfolio ? "text-taupe" : "text-neutral-400"}`}></i>
+                    </a>
+                    <a href="/services/" class={mobileNavClass(isServices)}>
+                        <span class={isServices ? "text-taupe" : ""}>Services</span>
+                        <i class={`bi bi-arrow-right ${isServices ? "text-taupe" : "text-neutral-400"}`}></i>
+                    </a>
+                    <a href="/about/" class={mobileNavClass(isAbout)}>
+                        <span class={isAbout ? "text-taupe" : ""}>About</span>
+                        <i class={`bi bi-arrow-right ${isAbout ? "text-taupe" : "text-neutral-400"}`}></i>
+                    </a>
+                    <a href="/blog/" class={mobileNavClass(isBlog)}>
+                        <span class={isBlog ? "text-taupe" : ""}>Blog</span>
+                        <i class={`bi bi-arrow-right ${isBlog ? "text-taupe" : "text-neutral-400"}`}></i>
+                    </a>
+                    <div class="pt-4">
+                        <a href="/services/#contact" class="mobile-nav-link bg-rosegold text-white px-10 py-4 rounded-sm hover:bg-deeprose transition-all luxury-shadow text-center w-full block">
+                            Check Availability
+                        </a>
+                        <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-500 text-center mt-4">
+                            Vancouver & Lower Mainland BC
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script is:inline>
+    const setupMobileMenu = () => {
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu() {
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+                document.body.classList.toggle('overflow-hidden');
+            }
+        }
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            });
+        }
+    };
+    
+    // Initial setup
+    setupMobileMenu();
+    // Setup for ViewTransitions
+    document.addEventListener('astro:page-load', setupMobileMenu);
+</script>

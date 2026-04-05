@@ -1,0 +1,224 @@
+export const SITE_MEDIA = {
+    "brand": {
+        "profilePic": "/assets/images/1770331979396_apple-touch-icon-removebg-preview.jpg"
+    },
+    "home": {
+        "portfolioGallery": [
+            {
+                "colSpanClass": "md:col-span-7",
+                "url": "https://scontent-sea1-1.cdninstagram.com/v/t51.82787-15/657635148_18312009700260376_4394911214516583714_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=Mzg2MjIzNjU2ODYyODA0NTA2Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjkwOHgxMjEwLnNkci5DMyJ9&_nc_ohc=KSP1PWZsArgQ7kNvwEdh23v&_nc_oc=AdoJ8gKCr6ReHMHgJlU-oPNjdIhbu3_oqOLRBeby8mH6Fd_GsloHKOhIuxi8kZZyjbwlqqCrIYD-t7Tp1RIeOBJs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_gid=ELzqTTZzs2HVYCTdpomEgw&_nc_ss=7a32e&oh=00_Af0nFaqkJd4Xo1-sSPQlZ5s95g5pVn1pPVTAi3v8yS1VlA&oe=69D3CBA8",
+                "alt": "Soft Glow Bridal",
+                "title": "Soft Glow Bridal \u2013 Vancouver"
+            },
+            {
+                "colSpanClass": "md:col-span-5",
+                "url": "https://instagram.fyvr4-1.fna.fbcdn.net/v/t51.82787-15/651005993_18309536992260376_9045183330679407618_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=Mzg1MDk5NTExMDk1MjMwNjA4MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=aonraRjrRMEQ7kNvwHbFfx5&_nc_oc=AdroaDBIpn_MCAtQqYk99Tct0ETw0POod37bO2JIM23L0WqkAqbK5P8QeNPETm7plMnnIzivJ6tARkZgzwi8Aykg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fyvr4-1.fna&_nc_gid=p1CGMvSo8fSko8TdpWjCPw&_nc_ss=7a32e&oh=00_Af3WCwV0MhZWrbaB-7SKxrOTwxK5XBYQOkZuBksfHhhW7A&oe=69D3A5A9",
+                "alt": "Modern Muse",
+                "title": "Modern Muse \u2013 Signature Artistry"
+            },
+            {
+                "colSpanClass": "md:col-span-5",
+                "url": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/657900116_18312006439260376_7833106239361799839_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=Mzg2MjIyMDc0NjMwMzczODAyNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM0OS5zZHIuQzMifQ%3D%3D&_nc_ohc=w-EnxpPvXDEQ7kNvwFjBdTW&_nc_oc=AdrI-othCaX_dLKAXwptM2I9vkFTxt1SV0uNCDEyJ7AeaLC8G5QKVv_O-XdHs1_g_vZkYd9rz648RXGpd_D4loKj&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=p1CGMvSo8fSko8TdpWjCPw&_nc_ss=7a32e&oh=00_Af2KDfpc3JFAB8AR4NUgLT_ObeQ9jCR2J-LkdYheEvQ_aA&oe=69D3BA67",
+                "alt": "Wedding Party",
+                "title": "Soft Glam for the Wedding Party"
+            },
+            {
+                "colSpanClass": "md:col-span-7",
+                "url": "https://scontent-sea1-1.cdninstagram.com/v/t51.82787-15/642537956_18308276278260376_2169598448483752935_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzg0MzU1MTA0NjY2NTQwODE0NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=srt9XBEeSrQQ7kNvwHaL444&_nc_oc=Ado_pvOjKvyHhyQ08CtX6vb3tsL4YdLo3pkpy_GrUClmyI_ilHmeky2HdCTV2sp2VET4Q00VW3XP_JTYjMV13gF4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_gid=cZi2fXkXHsmy18BXTr7JLQ&_nc_ss=7a32e&oh=00_Af0-hFXT_KFBOVrbdTwJPdI6AeOaw_KrwANjXeF6t0CbnQ&oe=69D3D4A0",
+                "alt": "Editorial Radiance",
+                "title": "Editorial Radiance \u2013 For Creatives"
+            }
+        ],
+        "transformations": [
+            {
+                "beforeUrl": "/assets/images/1770175874010_1b29e48ba093cc01a767de43065c6441.jpg",
+                "beforeAlt": "Natural",
+                "afterUrl": "/assets/images/1770175905391_2a5f734405cd6dc786a894458763177a.jpg",
+                "afterAlt": "Soft Glam",
+                "label": "Natural to Soft Glam Bridal"
+            },
+            {
+                "beforeUrl": "/assets/images/1770175924367_7f7530e9ddf3f7e99cb6dfc84646046d.jpg",
+                "beforeAlt": "Fresh Everyday",
+                "afterUrl": "/assets/images/1770175934163_2b12047e2dd4f2afff8c3bf11a228692.jpg",
+                "afterAlt": "Editorial Glow",
+                "label": "Fresh Everyday to Editorial Glow"
+            },
+            {
+                "beforeUrl": "/assets/images/1770175965094_0c87cc2c07dc82d935124734f1432e79.jpg",
+                "beforeAlt": "Daytime Minimal",
+                "afterUrl": "/assets/images/1770175974149_35063527360ac836c981c33ea8aea25e.jpg",
+                "afterAlt": "Evening Ready",
+                "label": "Daytime Minimal to Reception Ready"
+            }
+        ],
+        "instagramGrid": [
+            {
+                "url": "https://scontent-sea1-1.cdninstagram.com/v/t51.82787-15/658400543_18312010393260376_6152755791944527338_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzg2MjIzOTU4NzUwMzUxNDI5MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=ACRU27IPfdEQ7kNvwEhQS6H&_nc_oc=AdqmqjkKh-HAAQT9XNnKJbzop6_0qXv0F5RM4SPM6uNqml1zTHIetZYc8KiyChaoO9WNbcj_lsIh_0UcAtTWFXK0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_gid=KuA8OLxli1XZuqxIRqRUOg&_nc_ss=7a32e&oh=00_Af1GsnkMHp4kzwZrL-XEBdtJR6-WHyRDMiw9ZhR60NIrNA&oe=69D3B173",
+                "alt": "Stanley Park Bridal Glam",
+                "hoverText": "Stanley Park Bridal Glam"
+            },
+            {
+                "url": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/656157556_18312009982260376_484787196986281545_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzg2MjIzODA0MDAxNTA5MjE4Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=xL_7CZ1D-zYQ7kNvwGxayl1&_nc_oc=Adq7ld4QdwPyjYrwoTZ4VlPkko6S6kiv6aNjpBidJFlR1yadFbTDY95QnD-f-UeypKm_qzgrSuSFbRoGa222PM_c&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=KuA8OLxli1XZuqxIRqRUOg&_nc_ss=7a32e&oh=00_Af3wDZ_QIkFNytCm0ZtP3HvAeFcGz0iQ2bH8VBEEopDrrA&oe=69D3C1F6",
+                "alt": "Vera Editorial",
+                "hoverText": "Vera Signature Editorial"
+            },
+            {
+                "url": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/658343995_18312009340260376_6548341423653256547_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=Mzg2MjIzNTExNzIzOTQ4NjA5Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjk0N3gxMjYxLnNkci5DMyJ9&_nc_ohc=MAn8leKKBpYQ7kNvwELr_up&_nc_oc=Ado4Le-_RpA5HLrxA0Zpdrc0kC5sFNb99G87XDEzIoEZMClEM7eUMC1KSwxOgzvZLtJ21fO8FuHlW-jPjzEwZy_T&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=KuA8OLxli1XZuqxIRqRUOg&_nc_ss=7a32e&oh=00_Af34q8uod5wYDDOBHaa272eBD2pPBmOEk9ZbX0ZoxG-a8A&oe=69D3B148",
+                "alt": "Fall Wedding Glam",
+                "hoverText": "Soft Neutrals for Fall"
+            },
+            {
+                "url": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/657367261_18312006244260376_7167800403171715396_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=Mzg2MjIxOTg5Nzc3OTI1ODY3MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjk4MngxMjI3LnNkci5DMyJ9&_nc_ohc=f57GUAupbRIQ7kNvwHwa3En&_nc_oc=AdpvuiFux_H8U09e61wo_cWre3nt_YVo0SAn4-XDNx1Fn8DYXgR76VZ3SU-oNkppEoLt339cUL3OZgLVWH6Iwhvr&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=0ME3oo1mKu8-tYXwK6i34w&_nc_ss=7a32e&oh=00_Af2M1R4Hkjr4F2RUllMOFqZsKkZ05tFThFbpOupU1sZ1dA&oe=69D3D08A",
+                "alt": "Skincare BTS",
+                "hoverText": "Skincare Prep BTS"
+            },
+            {
+                "url": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/649829612_18309535645260376_7427923397221731436_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=Mzg1MDk4ODM2NzAzMTU5ODU2MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwMTl4MTM1OC5zZHIuQzMifQ%3D%3D&_nc_ohc=2AgRGfICBl4Q7kNvwFH_pmD&_nc_oc=AdpNFBmov65cx-fGfJEjYkTxmlm0yz74f2aBNItRANTv6LfS1_JKE4rTmg37s6WqiduG3ct_CPgEtB_gGtKWZdXo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=oJIgmpr3YZxLa8_Fn81Nuw&_nc_ss=7a32e&oh=00_Af2nYxUAOfEqmTkOsI9lIMJtpcmGslwbA70BTQVPKP7v3w&oe=69D3C1E4",
+                "alt": "Bridal Party Glow",
+                "hoverText": "Bridal Party Glow"
+            },
+            {
+                "url": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/651333644_18309536122260376_1050509948271594599_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=Mzg1MDk5MTA2MDUyOTc2MTg0Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=7Jq3D64EREkQ7kNvwGs_teF&_nc_oc=AdravXdCW_DAUZu_ZqSnclN8P2Nf8qhcbjrgE-1XerfFumjz3QWRQHXtntt8h1CoOaeka4NjG8aEpcShy4DAcKBf&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=U2XNGn7ywMiI27o9DnYLRg&_nc_ss=7a32e&oh=00_Af1m7B1w5l171J3f2hOZUNBcJ3Ipubjwhru_Z1PUcuuWtQ&oe=69D3BD2D",
+                "alt": "Studio Test",
+                "hoverText": "Studio Test Shoot"
+            }
+        ],
+        "heroBackground": "/assets/images/1770177369227_processed.jpeg"
+    },
+    "portfolio": {
+        "gallery": [
+            {
+                "url": "https://static.wixstatic.com/media/c04a33_937f9351fb534e59bc4e892fca7b3811~mv2.jpg",
+                "alt": "Bridal makeup radiance",
+                "category": "Graduation|Career",
+                "title": "Luminous Morning",
+                "tags": [
+                    "graduation-career"
+                ]
+            },
+            {
+                "url": "https://static.wixstatic.com/media/c04a33_8ecc82dd24394867a612da08d9191d31~mv2.jpg",
+                "alt": "Editorial graphic eyeliner",
+                "category": "Bridal",
+                "title": "The Indigo Line",
+                "tags": [
+                    "bridal"
+                ]
+            },
+            {
+                "url": "/assets/images/1770177369227_processed.jpeg",
+                "alt": "Macro skin glow",
+                "category": "Bridal",
+                "title": "Second Skin Glow",
+                "tags": [
+                    "bridal"
+                ]
+            },
+            {
+                "url": "https://static.wixstatic.com/media/c04a33_30443d514b11414aadad40fdb9ee6feb~mv2.jpg",
+                "alt": "Avant-garde metallic makeup",
+                "category": "Graduation|Career",
+                "title": "Metallic Ether",
+                "tags": [
+                    "graduation-career"
+                ]
+            },
+            {
+                "url": "https://static.wixstatic.com/media/c04a33_9c0175788c534843a0dea72185ef0914~mv2.jpg",
+                "alt": "Classic bridal elegance",
+                "category": "Events",
+                "title": "Silk &amp; Reflection",
+                "tags": [
+                    "events"
+                ]
+            },
+            {
+                "url": "https://static.wixstatic.com/media/c04a33_39d2949541b640deac0003a952a233c8~mv2.jpg",
+                "alt": "Clean beauty look",
+                "category": "Creative",
+                "title": "Pure Luminescence",
+                "tags": [
+                    "creative"
+                ]
+            },
+            {
+                "url": "https://static.wixstatic.com/media/c04a33_6bb7ca6a829248d6ada7f5084b2f503a~mv2.jpg",
+                "alt": "Evening glamour smoky eye",
+                "category": "Bridal",
+                "title": "Nocturnal Bronze",
+                "tags": [
+                    "bridal"
+                ]
+            },
+            {
+                "url": "https://static.wixstatic.com/media/c04a33_3d297ac3bf9f4c898db5a89915a229e0~mv2.jpg",
+                "alt": "Runway yellow eyeshadow",
+                "category": "Events",
+                "title": "Backstage Marigold",
+                "tags": [
+                    "events"
+                ]
+            },
+            {
+                "url": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/658321442_18312009709260376_965928406518681539_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=Mzg2MjIzNjU2ODY3ODM5ODg5Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=6skv_uDRArYQ7kNvwGhM_Aj&_nc_oc=AdqwzGH1BBA5j5qarr8BEOYdUUW2e3w_8q8oXpjshpyPZn4hCHMyBQ9n4hf3LVNQV27yiLxnoKsJco8OQB2phZvK&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=Q2U8d8ZpWGX1IvCXxvfoQA&_nc_ss=7a32e&oh=00_Af2Z0ZsjbAa0YiM_UIOUDor63FnZE9tA88B1MOBsqo4qbQ&oe=69D3C536",
+                "alt": "Soft romantic pink makeup",
+                "category": "Bridal",
+                "title": "Wildflower Blush",
+                "tags": [
+                    "bridal"
+                ]
+            }
+        ]
+    },
+    "blog": {
+        "posts": [
+            {
+                "videoUrl": "https://media.clicksites.ai/clicksites/uploads/5233/1770283861778_copy_2532f205-3754-4a95-81e7-b6f7c84b1272.mp4#t=1",
+                "likes": "1,355",
+                "caption": "The perfect rosy cheek for a bridal look. Here's a quick tutorial on achieving that natural flush.",
+                "commentsLabel": "View all 69 comments",
+                "timeAgo": "5 days ago"
+            },
+            {
+                "videoUrl": "https://media.clicksites.ai/clicksites/uploads/5233/1770334007358_0205.mp4#t=1",
+                "likes": "2,104",
+                "caption": "Mastering the classic winged eyeliner. It\u2019s all about the right tool and a steady hand!",
+                "commentsLabel": "View all 112 comments",
+                "timeAgo": "1 week ago"
+            },
+            {
+                "videoUrl": "https://media.clicksites.ai/clicksites/uploads/5233/1770283548259_1120.mp4#t=1",
+                "likes": "987",
+                "caption": "My secret to the perfect pout: a slightly overdrawn liner and a touch of gloss in the center.",
+                "commentsLabel": "View all 45 comments",
+                "timeAgo": "2 weeks ago"
+            },
+            {
+                "videoUrl": "https://media.clicksites.ai/clicksites/uploads/5233/1770283522006_copy_28450445-e327-42f5-a8cc-6c573a1e1521.mp4#t=1",
+                "likes": "3,421",
+                "caption": "What's in my bag? A quick look at my go-to products for creating that flawless bridal glow.",
+                "commentsLabel": "View all 230 comments",
+                "timeAgo": "3 weeks ago"
+            },
+            {
+                "videoUrl": "https://media.clicksites.ai/clicksites/uploads/5233/1770283498735_copy_5fcde03a-4d9d-45c7-acb0-37c193395422.mp4#t=1",
+                "likes": "4,019",
+                "caption": "Behind the scenes with the lovely bride, Jessica. It was an honor to be part of your special day!",
+                "commentsLabel": "View all 315 comments",
+                "timeAgo": "1 month ago"
+            },
+            {
+                "videoUrl": "https://media.clicksites.ai/clicksites/uploads/5233/1770284512277_copy_da74b405-5da9-42ef-983f-5b756b9ee987.mp4#t=1",
+                "likes": "823",
+                "caption": "Sunday reset! How I deep clean my brushes to keep them perfect for every client.",
+                "commentsLabel": "View all 33 comments",
+                "timeAgo": "1 month ago"
+            }
+        ]
+    },
+    "about": {
+        "heroBackground": "/assets/images/close_up_top_down_view_of_luxu_bde8e12abf8373e4bb9cf9f4c48763db.png",
+        "profileImage": "/assets/images/1770260105596_dsc02114.jpg"
+    }
+};

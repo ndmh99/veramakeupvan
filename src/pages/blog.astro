@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_MEDIA } from '../config/media.ts';
+---
+
+<Layout title="Sophisticated Bridal & Editorial Makeup Artist | Vancouver, BC">
+    <Header />
+    
+<main class="pt-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-5 py-16">
+        <div class="text-center mb-16">
+            <h1 class="font-serif text-4xl lg:text-5xl text-neutral-900">Vera's Blog</h1>
+            <p class="mt-4 text-neutral-500 max-w-xl mx-auto">Tutorials, tips, and behind-the-scenes moments. Follow my creative process and get inspired for your next look.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            
+                        {SITE_MEDIA.blog.posts.map((item) => (
+                <div class="bg-white border border-neutral-200 rounded-sm group">
+                    <div class="flex items-center justify-between p-3.5 border-b border-neutral-200">
+                        <div class="flex items-center gap-3">
+                            <img src={SITE_MEDIA.brand.profilePic} class="w-8 h-8 rounded-full object-cover" alt="Vera Makeup profile picture" />
+                            <div class="font-bold text-sm flex items-center gap-1">
+                                veramakeupvan
+                                <i class="bi bi-patch-check-fill text-blue-500 text-xs"></i>
+                            </div>
+                        </div>
+                        <button class="text-neutral-500">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <video controls width="600" preload="metadata">
+                            <source src={item.videoUrl} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="flex gap-4 text-2xl text-neutral-800">
+                                <button class="hover:opacity-70"><i class="bi bi-heart"></i></button>
+                                <button class="hover:opacity-70"><i class="bi bi-chat"></i></button>
+                                <button class="hover:opacity-70"><i class="bi bi-send"></i></button>
+                            </div>
+                            <div>
+                                <button class="text-2xl text-neutral-800 hover:opacity-70"><i class="bi bi-bookmark"></i></button>
+                            </div>
+                        </div>
+                        <p class="font-bold text-sm mb-2">{item.likes} likes</p>
+                        <p class="text-sm mb-2">
+                            <span class="font-bold">veramakeupvan</span> {item.caption}
+                        </p>
+                        <p class="text-sm text-neutral-500 mb-2 cursor-pointer hover:underline">{item.commentsLabel}</p>
+                        <p class="text-xs text-neutral-400 uppercase tracking-wide">{item.timeAgo}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+        
+    </div>
+</main>
+    
+    
+
+    <!-- FOOTER -->
+    
+    <Footer />
+
+<script is:inline>
+    document.addEventListener('astro:page-load', () => {
+        document.querySelectorAll('video').forEach(video => video.load());
+    });
+</script>
+
+</Layout>

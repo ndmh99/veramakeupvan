@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_MEDIA } from '../config/media.ts';
+---
+
+<Layout title="Sophisticated Bridal & Editorial Makeup Artist | Vancouver, BC">
+    <Header />
+    
+<!-- EDITORIAL BANNER -->
+    <section class="relative py-32 lg:py-40 bg-neutral-900 overflow-hidden reveal-up active">
+        <div data-gen-prompt="Close up top down view of luxury makeup products, gold and rose gold packaging, scattered artistically on a marble surface, soft moody lighting, elegant texture" data-gen-aspect="21:9" class="absolute inset-0 z-0 opacity-20 bg-cover bg-center" style={`background-image: url('${SITE_MEDIA.about.heroBackground}'); background-size: cover; background-position: center;`}></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+            <i class="bi bi-quote text-4xl text-rosegold mb-6 block"></i>
+            <p class="font-serif text-3xl lg:text-5xl leading-tight mb-8">
+                "The best color in the whole world is the one that looks good on you."
+            </p>
+            <p class="text-sm tracking-[0.2em] uppercase text-neutral-400">— Coco Chanel</p>
+        </div>
+    </section>
+
+    <!-- THE EXPERIENCE / PROCESS -->
+    <section class="py-24 bg-alabaster reveal-up active">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                 <div class="relative order-2 lg:order-1">
+                    <div class="aspect-[3/4] overflow-hidden rounded-sm">
+                        <img src={SITE_MEDIA.about.profileImage} alt="Vera working with a client" class="w-full h-full object-cover" style="">
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 lg:-left-10 lg:right-auto bg-white p-8 max-w-xs shadow-[0_20px_50px_rgba(0,0,0,0.05)] hidden md:block">
+                        <p class="font-serif text-2xl text-neutral-900 mb-2">5+</p>
+                        <p class="text-xs uppercase tracking-widest text-neutral-500">Years of Experience</p>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <span class="text-taupe tracking-[0.2em] text-[10px] uppercase font-bold mb-4 block">The Evolution</span>
+                    <h2 class="font-serif text-4xl text-neutral-900 mb-10">My Professional Journey</h2>
+                    
+                    <div class="space-y-20">
+    <div class="relative">
+        <span class="absolute -top-10 left-0 font-serif text-8xl text-neutral-900/[0.03] pointer-events-none select-none">01</span>
+        <div class="relative">
+            <h4 class="font-bold text-neutral-900 mb-4 uppercase text-[10px] tracking-[0.4em] flex items-center">
+                The Foundation
+                <span class="ml-4 h-px w-12 bg-rosegold/50"></span>
+            </h4>
+            <p class="text-sm text-neutral-500 leading-loose max-w-md">My career began with a deep fascination for color theory and the art of transformation. I spent my early years training under master artists, learning that the most powerful beauty is often the most subtle.</p>
+        </div>
+    </div>
+
+    <div class="relative">
+        <span class="absolute -top-10 left-0 font-serif text-8xl text-neutral-900/[0.03] pointer-events-none select-none">02</span>
+        <div class="relative">
+            <h4 class="font-bold text-neutral-900 mb-4 uppercase text-[10px] tracking-[0.4em] flex items-center">
+                Industry Experience
+                <span class="ml-4 h-px w-12 bg-rosegold/50"></span>
+            </h4>
+            <p class="text-sm text-neutral-500 leading-loose max-w-md">Years in the editorial and fashion world refined my technical skills. Working on high-pressure runway shows and professional sets taught me the importance of longevity, precision, and the art of skin-first makeup.</p>
+        </div>
+    </div>
+
+    <div class="relative">
+        <span class="absolute -top-10 left-0 font-serif text-8xl text-neutral-900/[0.03] pointer-events-none select-none">03</span>
+        <div class="relative">
+            <h4 class="font-bold text-neutral-900 mb-4 uppercase text-[10px] tracking-[0.4em] flex items-center">
+                The Signature Style
+                <span class="ml-4 h-px w-12 bg-rosegold/50"></span>
+            </h4>
+            <p class="text-sm text-neutral-500 leading-loose max-w-md">Today, I've synthesized my experiences into a signature approach focused on timeless elegance. My mission is to provide an elevated, personalized experience that honors each client's unique individuality.</p>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-40 bg-white reveal-up active">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="font-serif text-4xl text-neutral-900 italic">Loved by Vancouver Brides &amp; Creatives</h2>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-24">
+                    <i class="bi bi-quote text-5xl text-rosegold mb-8 block"></i>
+                    <p class="font-serif text-3xl lg:text-4xl italic text-neutral-800 leading-relaxed mb-8">
+                        "Vera truly understood my vision for a modern, 'no-makeup' makeup look. It felt so light, yet photographed flawlessly from 10 AM until midnight. She is a master of luminous skin."
+                    </p>
+                    <cite class="text-sm tracking-widest uppercase font-bold text-taupe not-italic">— Emma L., Vancouver Bride</cite>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-neutral-100 pt-16">
+                    <div class="flex space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-alabaster rounded-full flex items-center justify-center">
+                            <i class="bi bi-camera text-taupe"></i>
+                        </div>
+                        <div>
+                            <p class="text-neutral-600 italic mb-4">"Working with Vera on set is a dream. Her technical skill and understanding of how makeup translates to high-end digital sensors is unparalleled."</p>
+                            <span class="text-xs font-bold tracking-widest uppercase text-neutral-900">Daniel K., Wedding Photographer</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-alabaster rounded-full flex items-center justify-center">
+                            <i class="bi bi-brush text-taupe"></i>
+                        </div>
+                        <div>
+                            <p class="text-neutral-600 italic mb-4">"Her editorial eye and ability to pivot between soft glam and high fashion make her my first call for every creative campaign we launch."</p>
+                            <span class="text-xs font-bold tracking-widest uppercase text-neutral-900">Harper S., Creative Director</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-20 flex flex-col items-center justify-center space-y-2">
+                    <p class="text-[11px] tracking-[0.2em] uppercase text-taupe">200+ weddings and events across Vancouver &amp; the Lower Mainland</p>
+                    <p class="text-[11px] tracking-[0.2em] uppercase font-bold text-neutral-900">Trusted by brides, photographers, and creative teams</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- FOOTER -->
+    
+    <Footer />
+</Layout>

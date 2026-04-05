@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Booking Policies | Vera Makeup Artistry">
+    <Header />
+    <main class="pt-32 pb-24 bg-alabaster min-h-screen">
+        <div class="max-w-4xl mx-auto px-6">
+            
+            <a href="javascript:history.back()" class="text-neutral-900 border border-neutral-200 px-6 py-3 tracking-[0.2em] text-[10px] uppercase font-bold mb-12 hover:bg-neutral-50 transition-colors inline-flex items-center gap-2 rounded-sm cursor-pointer">
+                <i class="bi bi-x-lg"></i> Close & Return
+            </a>
+            <span class="text-taupe tracking-[0.2em] text-[10px] uppercase font-bold mb-4 block">Legal</span>
+            <h1 class="font-serif text-4xl lg:text-5xl text-neutral-900 mb-12">FAQ &amp; Booking Policies</h1>
+            
+            <div class="text-sm text-neutral-500 leading-loose max-w-none">
+                <p class="mb-6">To ensure the smoothest process for both parties, please review my official booking policies below before submitting an inquiry.</p>
+                
+                <h2 class="font-serif text-2xl text-neutral-900 mt-10 mb-4">1. Retainers and Payments</h2>
+                <p class="mb-6">A non-refundable and non-transferable retainer fee, along with a signed contract, is required to secure your wedding date. No date will be held without both. The remaining balance is due prior to the day of the event.</p>
+                
+                <h2 class="font-serif text-2xl text-neutral-900 mt-10 mb-4">2. Cancellations</h2>
+                <p class="mb-6">Cancellations must be made in writing via email. The retainer is entirely non-refundable in the event of a cancellation. If the client cancels within 30 days of the event, the final balance is still legally required to be paid in full.</p>
+                
+                <h2 class="font-serif text-2xl text-neutral-900 mt-10 mb-4">3. Travel &amp; Accommodation</h2>
+                <p class="mb-6">Travel fees apply for locations outside of the Vancouver limit based on mileage. Any parking fees (valet, hotel parking) incurred on the day of the event will be directed to the final invoice.</p>
+                
+                <h2 class="font-serif text-2xl text-neutral-900 mt-10 mb-4">4. Client Health &amp; Allergies</h2>
+                <p class="mb-6">It is the client's responsibility to report any skin conditions, allergies, or prior negative reactions to specific cosmetic brands before the application. The artist is not responsible for allergic reactions to products if no prior warning is given.</p>
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>

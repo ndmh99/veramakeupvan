@@ -1,0 +1,206 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_MEDIA } from '../config/media.ts';
+---
+
+<Layout title="Sophisticated Bridal & Editorial Makeup Artist | Vancouver, BC">
+    <Header />
+    
+<!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center pt-20 reveal-up active">
+        <div class="grid grid-cols-1 lg:grid-cols-2 w-full h-full min-h-[calc(100vh-80px)]">
+            <div class="flex flex-col justify-center px-6 lg:px-20 py-20 order-2 lg:order-1">
+                <span class="text-sm tracking-[0.3em] uppercase text-taupe mb-6 block font-medium">Makeup Artist · Vancouver</span>
+                <h1 class="font-serif text-5xl lg:text-7xl leading-[1.1] text-neutral-900 mb-8">
+                    Effortless, Editorial <br> Glam for <span class="italic">Modern Brides</span>
+                </h1>
+                <p class="text-lg text-neutral-600 mb-10 leading-relaxed max-w-lg">
+                    Ensures you feel like yourself—just elevated.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
+                    <a href="#contact" class="bg-neutral-900 text-white px-8 py-5 text-sm tracking-widest uppercase hover:bg-neutral-800 transition-all text-center" >
+                        Check My Availability
+                    </a>
+                    <a href="/portfolio/" class="border border-neutral-200 px-8 py-5 text-sm tracking-widest uppercase hover:bg-neutral-50 transition-all text-center" >
+                        View Portfolio
+                    </a>
+                </div>
+
+                <div class="flex items-center space-x-6 text-[11px] tracking-[0.15em] uppercase text-taupe border-t border-neutral-200 pt-8">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-neutral-900 mb-1">Location</span>
+                        <span>Vancouver &amp; Lower Mainland BC</span>
+                    </div>
+                    <div class="w-px h-8 bg-neutral-200"></div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-neutral-900 mb-1">Trusted By</span>
+                        <span class="">200+ Happy CLIENTs</span>
+                    </div>
+                    <div class="w-px h-8 bg-neutral-200"></div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-neutral-900 mb-1">Experience</span>
+                        <span>5+ Professional Years</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative min-h-[500px] lg:min-h-full order-1 lg:order-2 overflow-hidden">
+                <div data-gen-prompt="High-end editorial bridal portrait, bride wearing a modern structured minimal wedding gown like Vera, soft glow makeup, luminous skin, neutral eyes, serene expression, natural light coming from a large window in a minimalist Vancouver studio." data-gen-aspect="3:4" class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 hover:scale-105" style={`background-image: url('${SITE_MEDIA.home.heroBackground}'); background-size: cover; background-position: center center;`}>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-alabaster/40 to-transparent lg:hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NICHE POSITIONING -->
+    <section class="py-16 bg-white reveal-up active">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24 max-w-3xl mx-auto">
+                <h2 class="font-serif text-4xl lg:text-5xl text-neutral-900 mb-8 italic">Minimal, Modern, and Photogenic</h2>
+                <p class="text-neutral-600 leading-relaxed text-lg">I believe in glow-driven techniques that photograph beautifully while remaining lightweight and comfortable for your entire celebration.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-100">
+                <div class="py-12 md:px-12 text-center group">
+                    <div class="w-16 h-16 bg-alabaster rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-rosegold/20 transition-colors">
+                        <i class="bi bi-stars text-2xl text-taupe"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-neutral-900 mb-4">Skin-First, Glow-Driven</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed">Makeup that stays luminous from the first photo to the final dance.
+                    </p>
+                </div>
+                
+                <div class="py-12 md:px-12 text-center group">
+                    <div class="w-16 h-16 bg-alabaster rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-rosegold/20 transition-colors">
+                        <i class="bi bi-lightning-charge text-2xl text-taupe"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-neutral-900 mb-4">Modern Bridal, Not Trendy</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        A design-inspired, timeless approach that avoids heavy trends.</p>
+                </div>
+                
+                <div class="py-12 md:px-12 text-center group">
+                    <div class="w-16 h-16 bg-alabaster rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-rosegold/20 transition-colors">
+                        <i class="bi bi-camera text-2xl text-taupe"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-neutral-900 mb-4">Photo-Perfect in Any Light</h3>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        Expertly applied for HD-camera readiness.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE LOOKS GALLERY -->
+    <section id="portfolio" class="py-24 reveal-up active">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <span class="text-xs tracking-[0.3em] uppercase text-taupe block mb-4">The Portfolio</span>
+                    <h2 class="font-serif text-4xl lg:text-5xl text-neutral-900 italic">Signature Vancouver Looks</h2>
+                </div>
+                <a href="/portfolio/" class="hidden md:block text-sm tracking-widest uppercase border-b border-neutral-300 pb-1 hover:border-taupe transition-all" >Explore Full Gallery</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[900px]">
+                                {SITE_MEDIA.home.portfolioGallery.map((item) => (
+                    <a href="/portfolio/" class={`${item.colSpanClass} relative group overflow-hidden block`} >
+                        <img src={item.url} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={item.alt} />
+                        <div class="absolute inset-0 bg-neutral-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
+                            <h4 class="font-serif text-2xl mb-2">{item.title}</h4>
+                            <span class="text-sm tracking-widest uppercase">View this full look <i class="bi bi-arrow-right ml-2"></i></span>
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+    
+
+    
+    
+
+    <!-- BEFORE AND AFTER STRIP -->
+    <section class="bg-neutral-50 overflow-hidden reveal-up active">
+        <div class="max-w-7xl mx-auto py-16">
+            <div class="text-center mb-20">
+                <span class="text-xs tracking-[0.3em] uppercase text-taupe block mb-4">Transformations</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-neutral-900 italic">Soft Transformations, Timeless Impact</h2>
+                <p class="text-neutral-500 mt-6 max-w-xl mx-auto">Shining your best features.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                                {SITE_MEDIA.home.transformations.map((item) => (
+                    <div class="space-y-6 group">
+                        <div class="grid grid-cols-2 gap-2 overflow-hidden rounded-sm luxury-shadow">
+                            <img src={item.beforeUrl} class="w-full grayscale group-hover:grayscale-0 transition-all duration-700" alt={item.beforeAlt} />
+                            <img src={item.afterUrl} class="w-full" alt={item.afterAlt} />
+                        </div>
+                        <p class="text-center text-xs tracking-widest uppercase font-bold text-neutral-600">{item.label}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM INTEGRATION -->
+    <section class="py-16 bg-white reveal-up active">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div class="max-w-xl">
+                    <h2 class="font-serif text-4xl text-neutral-900 italic mb-6">See the Latest Looks from Vancouver</h2>
+                    <p class="text-neutral-500">Join me on Instagram for behind-the-scenes content from weddings, studio test shoots, and event celebrations.</p>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/veramakeupvan/" class="bg-neutral-900 text-white px-8 py-4 text-xs tracking-widest uppercase hover:bg-neutral-800 transition-all inline-block" >View Instagram</a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                                {SITE_MEDIA.home.instagramGrid.map((item) => (
+                    <div class="relative group aspect-square overflow-hidden bg-neutral-100">
+                        <img src={item.url} class="w-full h-full object-cover transition-transform group-hover:scale-110" alt={item.alt} />
+                        <div class="absolute inset-0 bg-neutral-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-[10px] uppercase tracking-widest p-4 text-center">
+                            {item.hoverText}
+                        </div>
+                    </div>
+                ))}
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-sm text-neutral-600">Follow along <a href="https://www.instagram.com/veramakeupvan/" class="font-bold text-neutral-900 hover:text-taupe transition-colors" >@veramakeupvan</a> for more Vancouver bridal and editorial makeup</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="contact" class="py-40 bg-taupe text-alabaster overflow-hidden relative reveal-up active">
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="font-serif text-5xl lg:text-7xl mb-8">Ready for Makeup That Feels <br> Like You—<span class="italic">Just Elevated?</span></h2>
+            <p class="text-lg mb-12 max-w-2xl mx-auto text-alabaster/80 leading-relaxed">
+                Tell me about your date, venue, and style vision. I'll respond with availability and next steps within 24 hours.
+            </p>
+            <div class="flex flex-col items-center space-y-6">
+                <a href="/services/#contact" class="bg-white text-taupe px-12 py-6 text-sm tracking-[0.3em] uppercase font-bold hover:bg-neutral-100 transition-all luxury-shadow" >
+                    Inquire About Your Date
+                </a>
+                <a href="services/#menu" class="text-sm tracking-widest uppercase border-b border-alabaster/40 pb-1 hover:border-alabaster transition-all" >
+                    View Full Bridal Services ›
+                </a>
+            </div>
+        </div>
+        <!-- Decorative Background Element -->
+        <div class="absolute -bottom-20 -right-20 text-[20vw] font-serif italic text-white opacity-5 pointer-events-none whitespace-nowrap">
+            Modern Elegance
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    
+    <Footer />
+</Layout>
