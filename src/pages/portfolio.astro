@@ -37,15 +37,19 @@ import { SITE_MEDIA } from '../config/media.ts';
             <div id="gallery-container" class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 transition-all duration-500">
               
                                 {SITE_MEDIA.portfolio.gallery.map((item) => (
-                    <div class="relative group overflow-hidden break-inside-avoid gallery-item transition-opacity duration-500" data-tag={item.tags[0]}>
+                    <div class="relative group overflow-hidden break-inside-avoid gallery-item transition-opacity duration-500 cursor-pointer" data-tag={item.tags[0]} data-src={item.url}>
                         <img src={item.url} alt={item.alt} class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" />
-                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 pointer-events-none">
                             <span class="text-[10px] tracking-widest text-rosegold uppercase mb-2">{item.category}</span>
                             <h3 class="text-white font-serif text-2xl italic">{item.title}</h3>
                         </div>
                     </div>
                 ))}
             </div>
+            
+            <!-- Pagination Controls -->
+            <div id="pagination-controls" class="mt-16 flex justify-center items-center gap-2 text-xs font-mono tracking-[0.2em] uppercase mb-0 w-full col-span-full"></div>
+            
         </div>
     </section>
     
@@ -69,17 +73,195 @@ import { SITE_MEDIA } from '../config/media.ts';
     
     <Footer />
 
+    <!-- FAST LIGHTBOX -->
+    <dialog id="lightbox" class="p-0 m-0 w-screen h-screen max-w-full max-h-full bg-transparent overflow-hidden backdrop:bg-neutral-900/90 backdrop:backdrop-blur-sm fixed inset-0 z-[100] outline-none">
+        <div id="lightbox-wrapper" class="w-full h-full flex flex-col items-center justify-center p-4 lg:p-12 relative cursor-zoom-out opacity-0 scale-95 transition-all duration-300">
+            <button id="lightbox-close" class="absolute top-4 right-4 lg:top-8 lg:right-8 text-white/50 hover:text-white transition-colors z-50 p-2" aria-label="Close Lightbox">
+                <i class="bi bi-x-lg text-2xl lg:text-3xl"></i>
+            </button>
+            <img id="lightbox-img" src="" alt="Full view" class="max-w-full max-h-full object-contain shadow-2xl user-select-none" />
+        </div>
+    </dialog>
+    
+    <style is:global>
+        dialog#lightbox::backdrop {
+            animation: backdropFade 0.3s ease forwards;
+        }
+        
+        dialog#lightbox.hide::backdrop {
+            animation: backdropFadeOut 0.3s ease forwards;
+        }
+
+        @keyframes backdropFade {
+            from { background-color: transparent; backdrop-filter: blur(0px); }
+            to { background-color: rgba(23, 23, 23, 0.95); backdrop-filter: blur(8px); }
+        }
+
+        @keyframes backdropFadeOut {
+            from { background-color: rgba(23, 23, 23, 0.95); backdrop-filter: blur(8px); }
+            to { background-color: transparent; backdrop-filter: blur(0px); }
+        }
+    </style>
+
 <script is:inline>
     document.addEventListener('astro:page-load', () => {
         const filters = document.querySelectorAll('.filter-btn');
         const items = document.querySelectorAll('.gallery-item');
         const galleryContainer = document.getElementById('gallery-container');
+        const paginationContainer = document.getElementById('pagination-controls');
         
-        if (!filters.length || !galleryContainer) return;
+        if (!filters.length || !galleryContainer || !items.length) return;
 
+        const ITEMS_PER_PAGE = 9;
+        let currentPage = 1;
+        let currentFilter = 'all';
+
+        function getFilteredItems() {
+            return Array.from(items).filter(item => {
+                const tag = item.getAttribute('data-tag');
+                return currentFilter === 'all' || tag === currentFilter;
+            });
+        }
+
+        function renderGallery() {
+            const filteredItems = getFilteredItems();
+            const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+            const endIndex = startIndex + ITEMS_PER_PAGE;
+            const itemsToShow = filteredItems.slice(startIndex, endIndex);
+
+            // Hide old items instantly for animation buffer
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.pointerEvents = 'none';
+            });
+
+            setTimeout(() => {
+                items.forEach(item => {
+                    item.style.display = 'none';
+                });
+
+                // Display new items
+                itemsToShow.forEach(item => {
+                    item.style.display = 'block';
+                    item.style.pointerEvents = 'auto';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                    }, 50); // Small buffer to ensure display:block triggers properly before opacity transition
+                });
+
+                // Update container columns dynamically based on items currently visible
+                const visibleCount = itemsToShow.length;
+                galleryContainer.className = 'gap-6 space-y-6 transition-all duration-500';
+                if (visibleCount === 1) {
+                    galleryContainer.classList.add('columns-1', 'max-w-3xl', 'mx-auto');
+                } else if (visibleCount === 2) {
+                    galleryContainer.classList.add('columns-1', 'md:columns-2', 'max-w-5xl', 'mx-auto');
+                } else {
+                    galleryContainer.classList.add('columns-1', 'md:columns-2', 'lg:columns-3');
+                }
+            }, 300); // Need to wait for CSS fade out to finish
+        }
+
+        function renderPagination() {
+            if (!paginationContainer) return;
+            const filteredItems = getFilteredItems();
+            const totalPages = Math.max(1, Math.ceil(filteredItems.length / ITEMS_PER_PAGE));
+            
+            paginationContainer.innerHTML = '';
+
+            // Prev Button
+            const prevBtn = document.createElement('button');
+            prevBtn.textContent = 'Prev';
+            prevBtn.className = `px-4 py-2 border-b-2 border-transparent transition-all ${currentPage === 1 ? 'text-neutral-300 cursor-not-allowed' : 'hover:text-neutral-900 border-transparent hover:border-neutral-200'}`;
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updatePage();
+                }
+            });
+            paginationContainer.appendChild(prevBtn);
+
+            // Page Indicator
+            const pageIndicator = document.createElement('span');
+            pageIndicator.textContent = `${currentPage} / ${totalPages}`;
+            pageIndicator.className = 'px-4 py-2 text-neutral-900 font-bold tracking-widest';
+            paginationContainer.appendChild(pageIndicator);
+
+            // Next Button
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = 'Next';
+            nextBtn.className = `px-4 py-2 border-b-2 border-transparent transition-all ${currentPage === totalPages ? 'text-neutral-300 cursor-not-allowed' : 'hover:text-neutral-900 hover:border-neutral-200'}`;
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updatePage();
+                }
+            });
+            paginationContainer.appendChild(nextBtn);
+        }
+
+        function updatePage() {
+            renderGallery();
+            renderPagination();
+            // Scroll to gallery top smoothly relative to the filter bar
+            const galleryTop = document.getElementById('gallery-container').parentElement.getBoundingClientRect().top + window.scrollY - 150;
+            window.scrollTo({ top: galleryTop, behavior: 'smooth' });
+        }
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxWrapper = document.getElementById('lightbox-wrapper');
+        const closeBtn = document.getElementById('lightbox-close');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('hide');
+            lightbox.showModal();
+            // trigger layout for animation
+            requestAnimationFrame(() => {
+                lightboxWrapper.classList.remove('opacity-0', 'scale-95');
+                lightboxWrapper.classList.add('opacity-100', 'scale-100');
+            });
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeLightbox() {
+            lightboxWrapper.classList.remove('opacity-100', 'scale-100');
+            lightboxWrapper.classList.add('opacity-0', 'scale-95');
+            lightbox.classList.add('hide');
+            // Wait for fade out animation
+            setTimeout(() => {
+                lightbox.close();
+                document.body.classList.remove('overflow-hidden');
+            }, 300);
+        }
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                const src = item.getAttribute('data-src');
+                if(src) openLightbox(src);
+            });
+        });
+
+        // Close when clicking anywhere on the lightbox area
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === lightboxWrapper || e.target === lightboxImg || closeBtn.contains(e.target)) {
+                closeLightbox();
+            }
+        });
+        
+        // Ensure ESC key triggers smooth close too
+        lightbox.addEventListener('cancel', (e) => {
+            e.preventDefault();
+            closeLightbox();
+        });
+
+        // Setup filter clicking
         filters.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active button styling
                 filters.forEach(f => {
                     f.classList.remove('text-neutral-900', 'border-rosegold');
                     f.classList.add('border-transparent');
@@ -87,40 +269,17 @@ import { SITE_MEDIA } from '../config/media.ts';
                 btn.classList.remove('border-transparent');
                 btn.classList.add('text-neutral-900', 'border-rosegold');
 
-                // Filter items
-                const filter = btn.getAttribute('data-filter');
-                let visibleCount = 0;
+                currentFilter = btn.getAttribute('data-filter');
+                currentPage = 1; // Always reset to page 1 on new filter selection
                 
-                items.forEach(item => {
-                    const tag = item.getAttribute('data-tag');
-                    
-                    if (filter === 'all' || tag === filter) {
-                        item.style.display = 'block';
-                        visibleCount++;
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                        }, 10);
-                    } else {
-                        item.style.opacity = '0';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
-                    }
-                });
-
-                // Update container columns dynamically
-                setTimeout(() => {
-                    galleryContainer.className = 'gap-6 space-y-6 transition-all duration-500';
-                    if (visibleCount === 1) {
-                        galleryContainer.classList.add('columns-1', 'max-w-3xl', 'mx-auto');
-                    } else if (visibleCount === 2) {
-                        galleryContainer.classList.add('columns-1', 'md:columns-2', 'max-w-5xl', 'mx-auto');
-                    } else {
-                        galleryContainer.classList.add('columns-1', 'md:columns-2', 'lg:columns-3');
-                    }
-                }, 300);
+                renderGallery();
+                renderPagination();
             });
         });
+
+        // Initial setup sequence
+        renderGallery();
+        renderPagination();
     });
 </script>
 </Layout>
