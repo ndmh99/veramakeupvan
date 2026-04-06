@@ -56,7 +56,7 @@ const mobileNavClass = (isActive: boolean) =>
                     VERA<span class="text-deeprose italic">MAKEUP</span>
                 </a>
                 <button id="close-menu-btn" class="flex items-center justify-center aspect-square pr-3 pl-3 p-2 rounded-full border border-neutral-200 bg-white/70 hover:bg-white transition-colors text-neutral-900" aria-label="Close Menu">
-                    <i class="bi bi-x-lg text-xl text-deeprose"></i>
+                    <i class="bi bi-x-lg text-xl leading-[0.75] text-deeprose"></i>
                 </button>
             </div>
 
@@ -126,8 +126,6 @@ const mobileNavClass = (isActive: boolean) =>
         }
     };
     
-    // Initial setup
-    setupMobileMenu();
-    // Setup for ViewTransitions
+    // In Astro, 'astro:page-load' fires on initial load and subsequent navigations
     document.addEventListener('astro:page-load', setupMobileMenu);
 </script>

@@ -7,7 +7,7 @@ export const SITE_MEDIA = {
         "portfolioGallery": [
             {
                 "colSpanClass": "md:col-span-7",
-                "url": "https://scontent-sea1-1.cdninstagram.com/v/t51.82787-15/657635148_18312009700260376_4394911214516583714_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=Mzg2MjIzNjU2ODYyODA0NTA2Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjkwOHgxMjEwLnNkci5DMyJ9&_nc_ohc=KSP1PWZsArgQ7kNvwEdh23v&_nc_oc=AdoJ8gKCr6ReHMHgJlU-oPNjdIhbu3_oqOLRBeby8mH6Fd_GsloHKOhIuxi8kZZyjbwlqqCrIYD-t7Tp1RIeOBJs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_gid=ELzqTTZzs2HVYCTdpomEgw&_nc_ss=7a32e&oh=00_Af0nFaqkJd4Xo1-sSPQlZ5s95g5pVn1pPVTAi3v8yS1VlA&oe=69D3CBA8",
+                "url": "https://www.instagram.com/p/DWZa7U4mfta/media/?size=l",
                 "alt": "Soft Glow Bridal",
                 "title": "Soft Glow Bridal \u2013 Vancouver"
             },

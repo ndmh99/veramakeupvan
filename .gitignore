@@ -13,3 +13,6 @@ yarn-error.log*
 .astro/
 # tsconfig
 .astro/types.d.ts
+# package manager
+package-lock.json
+.gitnexus

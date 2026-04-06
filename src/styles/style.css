@@ -1024,6 +1024,10 @@ video {
     font-style: normal
 }
 
+.leading-\[0\.75\] {
+    line-height: 0.75
+}
+
 .leading-\[1\.1\] {
     line-height: 1.1
 }
