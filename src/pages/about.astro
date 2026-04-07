@@ -5,7 +5,26 @@ import Footer from '../components/Footer.astro';
 import { SITE_MEDIA } from '../config/media.ts';
 ---
 
-<Layout title="Sophisticated Bridal & Editorial Makeup Artist | Vancouver, BC">
+<Layout 
+    title="About Vera Makeup Studio | Professional Makeup Artist Vancouver"
+    description="Learn about Vera Makeup Studio. Over 5 years of experience in professional bridal, editorial and special event makeup in Vancouver, BC."
+    type="profile"
+>
+    <!-- Person Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Vera",
+      "jobTitle": "Professional Makeup Artist",
+      "url": "https://veramakeupvan.com/about",
+      "worksFor": {
+        "@type": "LocalBusiness",
+        "name": "Vera Makeup Studio"
+      }
+    }
+    </script>
+
     <Header />
     
 <!-- EDITORIAL BANNER -->

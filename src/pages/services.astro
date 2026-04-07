@@ -4,7 +4,27 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Sophisticated Bridal & Editorial Makeup Artist | Vancouver, BC">
+<Layout 
+    title="Makeup Services & Packages | Vera Makeup Studio Vancouver"
+    description="Professional makeup artistry services in Vancouver, BC. Specializing in bridal makeup, editorial looks, grad makeup, and special events. View our packages."
+    type="website"
+>
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Professional Makeup Artistry",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Vera Makeup Studio",
+        "image": "https://veramakeupvan.com/assets/images/thumbnail.png"
+      },
+      "areaServed": "Vancouver, BC",
+      "description": "Professional makeup artistry services for bridal, editorial, and special occasions."
+    }
+    </script>
+    
     <Header />
     
 <!-- THE SERVICE MENU -->

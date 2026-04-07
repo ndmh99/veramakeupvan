@@ -25,7 +25,7 @@ export const SITE_MEDIA = {
             },
             {
                 "colSpanClass": "md:col-span-7",
-                "url": "public/assets/images/642537956_18308276278260376_2169598448483752935_n.jpg  ",
+                "url": "/assets/images/642537956_18308276278260376_2169598448483752935_n.jpg  ",
                 "alt": "Editorial Radiance",
                 "title": "Editorial Radiance \u2013 For Creatives"
             }
