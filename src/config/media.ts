@@ -7,25 +7,25 @@ export const SITE_MEDIA = {
         "portfolioGallery": [
             {
                 "colSpanClass": "md:col-span-7",
-                "url": "https://scontent-sea1-1.cdninstagram.com/v/t51.82787-15/657635148_18312009700260376_4394911214516583714_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=Mzg2MjIzNjU2ODYyODA0NTA2Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjkwOHgxMjEwLnNkci5DMyJ9&_nc_ohc=KSP1PWZsArgQ7kNvwEdh23v&_nc_oc=AdoJ8gKCr6ReHMHgJlU-oPNjdIhbu3_oqOLRBeby8mH6Fd_GsloHKOhIuxi8kZZyjbwlqqCrIYD-t7Tp1RIeOBJs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_gid=ELzqTTZzs2HVYCTdpomEgw&_nc_ss=7a32e&oh=00_Af0nFaqkJd4Xo1-sSPQlZ5s95g5pVn1pPVTAi3v8yS1VlA&oe=69D3CBA8",
+                "url": "/assets/images/657635148_18312009700260376_4394911214516583714_n.jpg",
                 "alt": "Soft Glow Bridal",
                 "title": "Soft Glow Bridal \u2013 Vancouver"
             },
             {
                 "colSpanClass": "md:col-span-5",
-                "url": "https://instagram.fyvr4-1.fna.fbcdn.net/v/t51.82787-15/651005993_18309536992260376_9045183330679407618_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=Mzg1MDk5NTExMDk1MjMwNjA4MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=aonraRjrRMEQ7kNvwHbFfx5&_nc_oc=AdroaDBIpn_MCAtQqYk99Tct0ETw0POod37bO2JIM23L0WqkAqbK5P8QeNPETm7plMnnIzivJ6tARkZgzwi8Aykg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fyvr4-1.fna&_nc_gid=p1CGMvSo8fSko8TdpWjCPw&_nc_ss=7a32e&oh=00_Af3WCwV0MhZWrbaB-7SKxrOTwxK5XBYQOkZuBksfHhhW7A&oe=69D3A5A9",
+                "url": "/assets/images/651005993_18309536992260376_9045183330679407618_n.jpg",
                 "alt": "Modern Muse",
                 "title": "Modern Muse \u2013 Signature Artistry"
             },
             {
                 "colSpanClass": "md:col-span-5",
-                "url": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/657900116_18312006439260376_7833106239361799839_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=Mzg2MjIyMDc0NjMwMzczODAyNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM0OS5zZHIuQzMifQ%3D%3D&_nc_ohc=w-EnxpPvXDEQ7kNvwFjBdTW&_nc_oc=AdrI-othCaX_dLKAXwptM2I9vkFTxt1SV0uNCDEyJ7AeaLC8G5QKVv_O-XdHs1_g_vZkYd9rz648RXGpd_D4loKj&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=p1CGMvSo8fSko8TdpWjCPw&_nc_ss=7a32e&oh=00_Af2KDfpc3JFAB8AR4NUgLT_ObeQ9jCR2J-LkdYheEvQ_aA&oe=69D3BA67",
+                "url": "/assets/images/657900116_18312006439260376_7833106239361799839_n.jpg",
                 "alt": "Soft Glam for the Shot",
                 "title": "Soft Glam for the Shot"
             },
             {
                 "colSpanClass": "md:col-span-7",
-                "url": "https://scontent-sea1-1.cdninstagram.com/v/t51.82787-15/642537956_18308276278260376_2169598448483752935_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzg0MzU1MTA0NjY2NTQwODE0NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=srt9XBEeSrQQ7kNvwHaL444&_nc_oc=Ado_pvOjKvyHhyQ08CtX6vb3tsL4YdLo3pkpy_GrUClmyI_ilHmeky2HdCTV2sp2VET4Q00VW3XP_JTYjMV13gF4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea1-1.cdninstagram.com&_nc_gid=cZi2fXkXHsmy18BXTr7JLQ&_nc_ss=7a32e&oh=00_Af0-hFXT_KFBOVrbdTwJPdI6AeOaw_KrwANjXeF6t0CbnQ&oe=69D3D4A0",
+                "url": "public/assets/images/642537956_18308276278260376_2169598448483752935_n.jpg  ",
                 "alt": "Editorial Radiance",
                 "title": "Editorial Radiance \u2013 For Creatives"
             }
@@ -89,7 +89,7 @@ export const SITE_MEDIA = {
     "portfolio": {
         "gallery": [
             {
-                "url": "https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/658321442_18312009709260376_965928406518681539_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=Mzg2MjIzNjU2ODY3ODM5ODg5Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=6skv_uDRArYQ7kNvwGhM_Aj&_nc_oc=AdqwzGH1BBA5j5qarr8BEOYdUUW2e3w_8q8oXpjshpyPZn4hCHMyBQ9n4hf3LVNQV27yiLxnoKsJco8OQB2phZvK&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=Q2U8d8ZpWGX1IvCXxvfoQA&_nc_ss=7a32e&oh=00_Af2Z0ZsjbAa0YiM_UIOUDor63FnZE9tA88B1MOBsqo4qbQ&oe=69D3C536",
+                "url": "/assets/images/657635148_18312009700260376_4394911214516583714_n.jpg",
                 "alt": "Soft romantic pink makeup",
                 "category": "Bridal",
                 "title": "Wildflower Blush",
