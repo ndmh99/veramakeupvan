@@ -19,3 +19,4 @@ package-lock.json
 .claude
 AGENTS.md
 CLAUDE.md
+.vscode/

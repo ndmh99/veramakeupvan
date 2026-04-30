@@ -136,19 +136,19 @@ export const SITE_MEDIA = {
             {
                 "url": "/assets/images/472900156_1123171446169237_5899368313192126858_n.jpg",
                 "alt": " K-beauty glow",
-                "category": "Graduation|Career",
+                "category": "Portrait",
                 "title": "Polished & Powerful",
                 "tags": [
-                    "graduation-career"
+                    "portrait"
                 ]
             },
             {
                 "url": "/assets/images/611226561_17949469959076828_5971344414283151846_n.jpg",
                 "alt": "Retro Y2K Look",
-                "category": "Events",
+                "category": "Creative",
                 "title": "Bold Y2K Revival",
                 "tags": [
-                    "events"
+                    "creative"
                 ]
             },
             {
@@ -239,6 +239,213 @@ export const SITE_MEDIA = {
                 "title": "Backstage Eyeshadow",
                 "tags": [
                     "creative"
+                ]
+            },
+            {
+                "url": "/assets/images/481389644_17913459666076828_1655266379001749674_n.jpg",
+                "alt": "Femme Fatale",
+                "category": "Creative",
+                "title": "Femme Fatale",
+                "tags": [
+                    "creative"
+                ]
+            },
+            {
+                "url": "/assets/images/482150236_17914815339076828_2836847769148446143_n.jpg",
+                "alt": "Cozy Pet Portrait",
+                "category": "Portrait",
+                "title": "Cozy Pet Portrait",
+                "tags": [
+                    "portrait"
+                ]
+            },
+            {
+                "url": "/assets/images/481018713_17913460086076828_9083633554904740310_n.jpg",
+                "alt": "Windswept Crimson",
+                "category": "Portrait",
+                "title": "Windswept Crimson",
+                "tags": [
+                    "portrait"
+                ]
+            },
+            {
+                "url": "/assets/images/503431827_17927670735076828_7721245740716487958_n.jpg",
+                "alt": "Editorial Elegance",
+                "category": "Portrait",
+                "title": "Editorial Elegance",
+                "tags": [
+                    "portrait"
+                ]
+            },
+            {
+                "url": "/assets/images/487065797_18353503606198237_6167806536187609368_n.jpg",
+                "alt": "Spring Blossom Bridal",
+                "category": "Bridal",
+                "title": "Spring Blossom Bridal",
+                "tags": [
+                    "bridal"
+                ]
+            },
+            {
+                "url": "/assets/images/503614494_17927670297076828_2321159368673837696_n.jpg",
+                "alt": "Soft Spring Elegance",
+                "category": "Portrait",
+                "title": "Soft Spring Elegance",
+                "tags": [
+                    "portrait"
+                ]
+            },
+            {
+                "url": "/assets/images/539355220_17934639387076828_741475832213000524_n.jpg",
+                "alt": "Modern Studio Romance",
+                "category": "Bridal",
+                "title": "Modern Studio Romance",
+                "tags": [
+                    "bridal"
+                ]
+            },
+            {
+                "url": "/assets/images/567274449_17940787584076828_8259800288162908632_n.jpg",
+                "alt": "Family Portrait Bridal",
+                "category": "Bridal",
+                "title": "Family Portrait Bridal",
+                "tags": [
+                    "bridal"
+                ]
+            },
+            {
+                "url": "/assets/images/590462555_17945809539076828_1243519176602585011_n.jpg",
+                "alt": "Lace and Floral Bridal",
+                "category": "Bridal",
+                "title": "Lace and Floral Bridal",
+                "tags": [
+                    "bridal"
+                ]
+            },
+            {
+                "url": "/assets/images/589324590_17945809512076828_1357799339778718331_n.jpg",
+                "alt": "Bridal Lace Close-up",
+                "category": "Bridal",
+                "title": "Bridal Lace Close-up",
+                "tags": [
+                    "bridal"
+                ]
+            },
+            {
+                "url": "/assets/images/528327953_17932511730076828_1380320352655972682_n.jpg",
+                "alt": "Urban Duo Portrait",
+                "category": "Portrait",
+                "title": "Urban Duo Portrait",
+                "tags": [
+                    "portrait"
+                ]
+            },
+            {
+                "url": "/assets/images/574077457_17942813385076828_5578074961709276227_n.jpg",
+                "alt": "Serene Close-up Portrait",
+                "category": "Portrait",
+                "title": "Serene Close-up Portrait",
+                "tags": [
+                    "portrait"
+                ]
+            },
+            {
+                "url": "/assets/images/573967324_17943006978076828_2578302750711693068_n.jpg",
+                "alt": "Cozy Winter Portrait",
+                "category": "Portrait",
+                "title": "Cozy Winter Portrait",
+                "tags": [
+                    "portrait"
+                ]
+            },
+            {
+                "url": "/assets/images/574209928_17942997591076828_4408288073590908693_n.jpg",
+                "alt": "Joyful Maternity Session",
+                "category": "Events",
+                "title": "Joyful Maternity Session",
+                "tags": [
+                    "events"
+                ]
+            },
+            {
+                "url": "/assets/images/573509182_17942544066076828_6572691520823148303_n.jpg",
+                "alt": "Creative Editorial Pet Portrait",
+                "category": "Creative",
+                "title": "Creative Editorial Pet Portrait",
+                "tags": [
+                    "creative"
+                ]
+            },
+            {
+                "url": "/assets/images/639481611_17953866543076828_167944327612384934_n.jpg",
+                "alt": "Cozy Maternity Session",
+                "category": "Events",
+                "title": "Cozy Maternity Session",
+                "tags": [
+                    "events"
+                ]
+            },
+            {
+                "url": "/assets/images/636875944_17953884657076828_5981471355297940121_n.jpg",
+                "alt": "Dynamic Pose Editorial",
+                "category": "Creative",
+                "title": "Dynamic Pose Editorial",
+                "tags": [
+                    "creative"
+                ]
+            },
+            {
+                "url": "/assets/images/590414897_17946671217076828_5543028760837770641_n.jpg",
+                "alt": "Elegant Couple Portrait",
+                "category": "Portrait",
+                "title": "Elegant Couple Portrait",
+                "tags": [
+                    "portrait"
+                ]
+            },
+            {
+                "url": "/assets/images/634265067_17953865391076828_5125591899122842426_n.jpg",
+                "alt": "Elegant Maternity Glow",
+                "category": "Events",
+                "title": "Elegant Maternity Glow",
+                "tags": [
+                    "events"
+                ]
+            },
+            {
+                "url": "/assets/images/642353797_17855526468669202_8017249917811936573_n.jpg",
+                "alt": "Sunset Beach Bridal",
+                "category": "Bridal",
+                "title": "Sunset Beach Bridal",
+                "tags": [
+                    "bridal"
+                ]
+            },
+            {
+                "url": "/assets/images/565470358_17941069260076828_1722394883300793601_n.jpg",
+                "alt": "Traditional Meets Modern Editorial",
+                "category": "Creative",
+                "title": "Traditional Meets Modern Editorial",
+                "tags": [
+                    "creative"
+                ]
+            },
+            {
+                "url": "/assets/images/567649403_17941178418076828_5752599995134695685_n.jpg",
+                "alt": "Soft Pet Portrait",
+                "category": "Portrait",
+                "title": "Soft Pet Portrait",
+                "tags": [
+                    "portrait"
+                ]
+            },
+            {
+                "url": "/assets/images/537718705_17934544986076828_3984670494477379406_n.jpg",
+                "alt": "Studio Maternity Session",
+                "category": "Events",
+                "title": "Studio Maternity Session",
+                "tags": [
+                    "events"
                 ]
             }
         ]

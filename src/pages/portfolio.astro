@@ -32,13 +32,14 @@ import { SITE_MEDIA } from '../config/media.ts';
             <button class="filter-btn hover:text-taupe transition-all pb-1 border-b-2 border-transparent" data-filter="graduation-career">Graduation|Career</button>
             <button class="filter-btn hover:text-taupe transition-all pb-1 border-b-2 border-transparent" data-filter="events">Events</button>
             <button class="filter-btn hover:text-taupe transition-all pb-1 border-b-2 border-transparent" data-filter="creative">Creative</button>
+            <button class="filter-btn hover:text-taupe transition-all pb-1 border-b-2 border-transparent" data-filter="portrait">Portrait</button>
         </div>
     </section>
 
     <!-- MASONRY GALLERY -->
     <section class="pb-0 pt-20 bg-white reveal-up active">
         <div class="max-w-7xl mx-auto px-6">
-            <div id="gallery-container" class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 transition-all duration-500">
+            <div id="gallery-container" class="columns-1 md:columns-2 lg:columns-4 gap-6 space-y-6 transition-all duration-500">
               
                                 {SITE_MEDIA.portfolio.gallery.map((item) => (
                     <div class="relative group overflow-hidden break-inside-avoid gallery-item transition-opacity duration-500 cursor-pointer" data-tag={item.tags[0]} data-src={item.url}>
@@ -116,7 +117,7 @@ import { SITE_MEDIA } from '../config/media.ts';
         
         if (!filters.length || !galleryContainer || !items.length) return;
 
-        const ITEMS_PER_PAGE = 9;
+        const ITEMS_PER_PAGE = 12;
         let currentPage = 1;
         let currentFilter = 'all';
 
@@ -161,7 +162,7 @@ import { SITE_MEDIA } from '../config/media.ts';
                 } else if (visibleCount === 2) {
                     galleryContainer.classList.add('columns-1', 'md:columns-2', 'max-w-5xl', 'mx-auto');
                 } else {
-                    galleryContainer.classList.add('columns-1', 'md:columns-2', 'lg:columns-3');
+                    galleryContainer.classList.add('columns-1', 'md:columns-2', 'lg:columns-4');
                 }
             }, 300); // Need to wait for CSS fade out to finish
         }
@@ -186,11 +187,22 @@ import { SITE_MEDIA } from '../config/media.ts';
             });
             paginationContainer.appendChild(prevBtn);
 
-            // Page Indicator
-            const pageIndicator = document.createElement('span');
-            pageIndicator.textContent = `${currentPage} / ${totalPages}`;
-            pageIndicator.className = 'px-4 py-2 text-neutral-900 font-bold tracking-widest';
-            paginationContainer.appendChild(pageIndicator);
+            // Page Numbers
+            const pagesDiv = document.createElement('div');
+            pagesDiv.className = 'flex gap-2 mx-4';
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.textContent = i;
+                pageBtn.className = `w-8 h-8 flex items-center justify-center border-b-2 transition-all ${i === currentPage ? 'border-rosegold text-neutral-900 font-bold' : 'border-transparent text-neutral-500 hover:text-neutral-900 hover:border-neutral-200'}`;
+                pageBtn.addEventListener('click', () => {
+                    if (currentPage !== i) {
+                        currentPage = i;
+                        updatePage();
+                    }
+                });
+                pagesDiv.appendChild(pageBtn);
+            }
+            paginationContainer.appendChild(pagesDiv);
 
             // Next Button
             const nextBtn = document.createElement('button');

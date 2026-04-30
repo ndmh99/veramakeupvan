@@ -3,12 +3,25 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_MEDIA } from '../config/media.ts';
+
+const heroSliderImages = SITE_MEDIA.portfolio.gallery.filter(img => 
+    img.category === 'Bridal' || img.category === 'Events'
+).slice(0, 6);
 ---
 
 <Layout 
     title="Sophisticated Bridal & Editorial Makeup Artist | Vancouver, BC"
     description="Vera Makeup Studio: Specializing in effortless, editorial glam for modern brides. Top-rated luxury makeup artist in Metro Vancouver and surrounding areas."
 >
+    <style>
+        .hero-slider-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .hero-slider-container::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
     <!-- Structured Data -->
     <script type="application/ld+json" is:inline>
       {
@@ -72,13 +85,138 @@ import { SITE_MEDIA } from '../config/media.ts';
                 </div>
             </div>
             
-            <div class="relative min-h-[500px] lg:min-h-full order-1 lg:order-2 overflow-hidden">
-                <div data-gen-prompt="High-end editorial bridal portrait, bride wearing a modern structured minimal wedding gown like Vera, soft glow makeup, luminous skin, neutral eyes, serene expression, natural light coming from a large window in a minimalist Vancouver studio." data-gen-aspect="3:4" class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 hover:scale-105" style={`background-image: url('${SITE_MEDIA.home.heroBackground}'); background-size: cover; background-position: center center;`}>
+            <div class="relative min-h-[500px] lg:min-h-full order-1 lg:order-2 overflow-hidden group/hero">
+                <div id="hero-slider" class="hero-slider-container absolute inset-0 flex overflow-x-auto snap-x snap-mandatory touch-pan-x scroll-smooth">
+                    {heroSliderImages.map((image, index) => (
+                        <div class="flex-shrink-0 w-full h-full snap-start relative">
+                             <img 
+                                src={image.url} 
+                                alt={image.alt}
+                                class="w-full h-full object-cover object-top"
+                                style="object-position: center 30%;"
+                                loading={index === 0 ? "eager" : "lazy"}
+                            />
+                        </div>
+                    ))}
                 </div>
-                <div class="absolute inset-0 bg-gradient-to-t from-alabaster/40 to-transparent lg:hidden"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-alabaster/40 to-transparent lg:hidden pointer-events-none"></div>
+                
+                <!-- Slider Dots -->
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
+                    {heroSliderImages.map((_, i) => (
+                        <button 
+                            class={`w-2 h-2 rounded-full border border-white transition-all hero-dot ${i === 0 ? 'bg-white w-5' : 'bg-white/40'}`}
+                            data-index={i}
+                            aria-label={`Go to slide ${i + 1}`}
+                        ></button>
+                    ))}
+                </div>
             </div>
         </div>
     </section>
+
+    <script is:inline>
+      const initHeroSlider = () => {
+        const slider = document.getElementById('hero-slider');
+        const dots = document.querySelectorAll('.hero-dot');
+        if (!slider || dots.length === 0) return;
+
+        let currentIndex = 0;
+        const totalSlides = dots.length;
+        let interval;
+        let isUserInteracting = false;
+
+        const updateDots = (index) => {
+          dots.forEach((dot, i) => {
+            if (i === index) {
+              dot.classList.add('bg-white', 'w-5');
+              dot.classList.remove('bg-white/40');
+            } else {
+              dot.classList.remove('bg-white', 'w-5');
+              dot.classList.add('bg-white/40');
+            }
+          });
+        };
+
+        const goToSlide = (index) => {
+          if (index < 0 || index >= totalSlides) return;
+          currentIndex = index;
+          slider.scrollTo({
+            left: slider.offsetWidth * index,
+            behavior: 'smooth'
+          });
+          updateDots(index);
+        };
+
+        const nextSlide = () => {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          goToSlide(currentIndex);
+        };
+
+        const startAutoSlide = () => {
+          stopAutoSlide();
+          interval = setInterval(nextSlide, 5000);
+        };
+
+        const stopAutoSlide = () => {
+          if (interval) clearInterval(interval);
+        };
+
+        // Update current index based on scroll position (manual swipe)
+        let scrollTimeout;
+        const onScroll = () => {
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+                if (index !== currentIndex && index >= 0 && index < totalSlides) {
+                    currentIndex = index;
+                    updateDots(currentIndex);
+                }
+            }, 100);
+        };
+
+        slider.addEventListener('scroll', onScroll, { passive: true });
+
+        // Pause on interaction
+        const onInteractionStart = () => {
+            stopAutoSlide();
+            isUserInteracting = true;
+        };
+
+        slider.addEventListener('touchstart', onInteractionStart, { passive: true });
+        slider.addEventListener('mousedown', onInteractionStart);
+
+        const resume = () => {
+            if (isUserInteracting) {
+                isUserInteracting = false;
+                startAutoSlide();
+            }
+        };
+
+        slider.addEventListener('touchend', resume, { passive: true });
+        slider.addEventListener('mouseup', resume);
+        slider.addEventListener('mouseleave', resume);
+
+        // Dot clicks
+        dots.forEach((dot, i) => {
+          dot.addEventListener('click', () => {
+            goToSlide(i);
+            startAutoSlide();
+          });
+        });
+
+        // Initialize
+        startAutoSlide();
+
+        // Handle window resize
+        const onResize = () => {
+            goToSlide(currentIndex);
+        };
+        window.addEventListener('resize', onResize);
+      };
+
+      document.addEventListener('astro:page-load', initHeroSlider);
+    </script>
 
     <!-- NICHE POSITIONING -->
     <section class="py-16 bg-white reveal-up active">
