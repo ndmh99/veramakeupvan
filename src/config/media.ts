@@ -29,6 +29,21 @@ export const SITE_MEDIA = {
                 "url": "/assets/images/487065797_18353503606198237_6167806536187609368_n.jpg",
                 "alt": "Spring Blossom Bridal",
                 "title": "Spring Blossom Bridal"
+            },
+            {
+                "url": "/assets/images/590413618_17946577410076828_1732165925111980959_n.jpg",
+                "alt": "Maternity Portrait Glow",
+                "title": "Maternity Portrait"
+            },
+            {
+                "url": "/assets/images/496175391_17922210231076828_6907336814250855333_n.jpg",
+                "alt": "Runway eyeshadow",
+                "title": "Backstage Eyeshadow"
+            },
+            {
+                "url": "/assets/images/640879426_17855526456669202_6485400723038558735_n.jpg",
+                "alt": "Timeless bridal and groom glam",
+                "title": "Perfect “I do”"
             }
         ],
         "portfolioGallery": [
@@ -115,6 +130,15 @@ export const SITE_MEDIA = {
     },
     "portfolio": {
         "gallery": [
+            {
+                "url": "/assets/images/590413618_17946577410076828_1732165925111980959_n.jpg",
+                "alt": "Maternity Portrait",
+                "category": "Portrait",
+                "title": "Maternity Portrait",
+                "tags": [
+                    "portrait"
+                ]
+            },
             {
                 "url": "/assets/images/642527440_17955634470076828_108129480612785820_n.jpg",
                 "alt": "Festive Pet Portrait Glam",
