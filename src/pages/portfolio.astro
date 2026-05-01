@@ -288,8 +288,7 @@ import { SITE_MEDIA } from '../config/media.ts';
                 currentFilter = btn.getAttribute('data-filter');
                 currentPage = 1; // Always reset to page 1 on new filter selection
                 
-                renderGallery();
-                renderPagination();
+                updatePage();
             });
         });
 
