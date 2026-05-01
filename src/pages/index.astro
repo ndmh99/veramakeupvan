@@ -4,9 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_MEDIA } from '../config/media.ts';
 
-const heroSliderImages = SITE_MEDIA.portfolio.gallery.filter(img => 
-    img.category === 'Bridal' || img.category === 'Events'
-).slice(0, 6);
+const heroSliderImages = SITE_MEDIA.home.heroSlider;
 ---
 
 <Layout 

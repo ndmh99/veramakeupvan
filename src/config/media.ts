@@ -4,6 +4,33 @@ export const SITE_MEDIA = {
     },
     "home": {
         "heroBackground": "/assets/images/1770177369227_processed.jpeg",
+        "heroSlider": [
+            {
+                "url": "/assets/images/1770177369227_processed.jpeg",
+                "alt": "Macro skin glow",
+                "title": "Radiant Close-Up"
+            },
+            {
+                "url": "/assets/images/657635148_18312009700260376_4394911214516583714_n.jpg",
+                "alt": "Soft romantic pink makeup",
+                "title": "Wildflower Blush"
+            },
+            {
+                "url": "https://static.wixstatic.com/media/c04a33_937f9351fb534e59bc4e892fca7b3811~mv2.jpg",
+                "alt": "Bridal makeup radiance",
+                "title": "Happy Wedding Glow"
+            },
+            {
+                "url": "/assets/images/642537956_18308276278260376_2169598448483752935_n.jpg  ",
+                "alt": "Editorial Radiance",
+                "title": "Editorial Radiance \u2013 For Creatives"
+            },
+            {
+                "url": "/assets/images/487065797_18353503606198237_6167806536187609368_n.jpg",
+                "alt": "Spring Blossom Bridal",
+                "title": "Spring Blossom Bridal"
+            }
+        ],
         "portfolioGallery": [
             {
                 "colSpanClass": "md:col-span-7",
