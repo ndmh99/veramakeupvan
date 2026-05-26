@@ -45,7 +45,7 @@ import { SITE_MEDIA } from '../config/media.ts';
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                  <div class="relative order-2 lg:order-1">
                     <div class="aspect-[3/4] overflow-hidden rounded-sm">
-                        <img src={SITE_MEDIA.about.profileImage} alt="Vera working with a client" class="w-full h-full object-cover" style="">
+                        <img src={SITE_MEDIA.about.profileImage} alt="Vera working with a client" class="w-full h-full object-cover" loading="lazy" decoding="async" />
                     </div>
                     <div class="absolute -bottom-10 -right-10 lg:-left-10 lg:right-auto bg-white p-8 max-w-xs shadow-[0_20px_50px_rgba(0,0,0,0.05)] hidden md:block">
                         <p class="font-serif text-2xl text-neutral-900 mb-2">5+</p>
