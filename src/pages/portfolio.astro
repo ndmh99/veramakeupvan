@@ -17,7 +17,7 @@ import { SITE_MEDIA } from '../config/media.ts';
         <div class="max-w-7xl mx-auto px-6 text-center">
             <span class="text-xs tracking-[0.4em] uppercase text-taupe block mb-6 font-bold">make-up arts</span>
             <h1 class="font-serif text-5xl lg:text-7xl leading-[1.1] text-neutral-900 mb-8 max-w-4xl mx-auto">
-                The Portfolio</h1>
+                Bridal &amp; Editorial Makeup Portfolio</h1>
             <div class="w-24 h-px bg-rosegold mx-auto mb-10"></div>
             <p class="text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">Every look is a collaboration, designed to illuminate the individual.
             </p>
@@ -43,7 +43,13 @@ import { SITE_MEDIA } from '../config/media.ts';
               
                                 {SITE_MEDIA.portfolio.gallery.map((item) => (
                     <div class="relative group overflow-hidden break-inside-avoid gallery-item transition-opacity duration-500 cursor-pointer" data-tag={item.tags[0]} data-src={item.url}>
-                        <img src={item.url} alt={item.alt} class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" />
+                        <img 
+                            src={item.url} 
+                            alt={item.alt} 
+                            class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" 
+                            loading="lazy" 
+                            decoding="async" 
+                        />
                         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 pointer-events-none">
                             <span class="text-[10px] tracking-widest text-rosegold uppercase mb-2">{item.category}</span>
                             <h3 class="text-white font-serif text-2xl italic">{item.title}</h3>

@@ -18,10 +18,71 @@ import Footer from '../components/Footer.astro';
       "provider": {
         "@type": "LocalBusiness",
         "name": "Vera Makeup Studio",
-        "image": "https://veramakeupvan.com/assets/images/thumbnail.png"
+        "image": "https://veramakeupvan.com/assets/images/thumbnail.png",
+        "telephone": "+17789510631",
+        "url": "https://veramakeupvan.com"
       },
-      "areaServed": "Vancouver, BC",
-      "description": "Professional makeup artistry services for bridal, editorial, and special occasions."
+      "areaServed": [
+        "Vancouver",
+        "Burnaby",
+        "Richmond",
+        "Surrey",
+        "Metro Vancouver"
+      ],
+      "description": "Professional makeup artistry services specializing in bridal, editorial, and special event makeup across Metro Vancouver.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Makeup Services Catalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Bridal & Wedding Makeup",
+              "description": "A luxury experience including a detailed consultation, preview session, and on-site application on your wedding day."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 260.00,
+              "priceCurrency": "CAD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Events Makeup",
+              "description": "Cohesive, elegant looks for your loved ones that complement the overall bridal aesthetic."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 180.00,
+              "priceCurrency": "CAD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Photoshoot & Editorial Makeup",
+              "description": "Specialized techniques for commercial, branding, and editorial shoots."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "1:1 Lessons",
+              "description": "Master your own routine or refine your professional skills in a personalized hands-on session."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 100.00,
+              "priceCurrency": "CAD"
+            }
+          }
+        ]
+      }
     }
     </script>
     
@@ -32,7 +93,8 @@ import Footer from '../components/Footer.astro';
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
                 <span class="text-xs tracking-[0.3em] uppercase text-neutral-400 block mb-4">Investment</span>
-                <h2 class="font-serif text-4xl lg:text-5xl text-neutral-900">Signature Artistry Packages</h2>
+                <h1 class="font-serif text-4xl lg:text-5xl text-neutral-900 mb-4">Signature Makeup Services &amp; Packages</h1>
+                <p class="text-sm uppercase tracking-widest text-taupe font-medium">Bespoke Bridal, Editorial &amp; Special Event Artistry in Vancouver</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
