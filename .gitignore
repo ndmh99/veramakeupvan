@@ -15,8 +15,11 @@ yarn-error.log*
 .astro/types.d.ts
 # package manager
 package-lock.json
-.gitnexus
-.claude
+.gitnexus/
+.claude/
+.omo/
+.sisyphus/
+.astro/
 AGENTS.md
 CLAUDE.md
 .vscode/
