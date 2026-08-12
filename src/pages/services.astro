@@ -38,12 +38,12 @@ import Footer from '../components/Footer.astro';
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Bridal & Wedding Makeup",
-              "description": "A luxury experience including a detailed consultation, preview session, and on-site application on your wedding day."
+              "name": "Bridal Day-Of Hair & Makeup",
+              "description": "Bespoke skin preparation, premium false lash application, long-wear setting, and veil or hair accessory placement. Complimentary early morning start."
             },
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
-              "price": 260.00,
+              "price": 560.00,
               "priceCurrency": "CAD"
             }
           },
@@ -51,8 +51,61 @@ import Footer from '../components/Footer.astro';
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Events Makeup",
-              "description": "Cohesive, elegant looks for your loved ones that complement the overall bridal aesthetic."
+              "name": "Bridal Preview & Consultation (Trial)",
+              "description": "A dedicated 2 to 2.5-hour session to design, customize, and perfect your wedding day look prior to the big day."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 280.00,
+              "priceCurrency": "CAD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "6-Hour Bridal Touch-Up Package",
+              "description": "Complete Bridal Day-Of Hair & Makeup with up to 6 hours of on-site touch-up and support, plus 1 extra hairstyle transition."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 800.00,
+              "priceCurrency": "CAD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "10-Hour VIP Bridal Package",
+              "description": "Complete Bridal Day-Of Hair & Makeup with up to 10 hours of full-day on-site touch-up and support, plus 2 extra hairstyle transitions."
+            },
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 1200.00,
+              "priceCurrency": "CAD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Photoshoot & Event Hair & Makeup",
+              "description": "Tailored for personal portraits, engagement shoots, maternity sessions, branding photoshoots, and special galas."
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 180.00,
+              "maxPrice": 240.00,
+              "priceCurrency": "CAD"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Bridal Party & Guest Hair & Makeup",
+              "description": "Full-face event makeup with false lashes and tailored hair styling for bridesmaids, mothers, and special guests."
             },
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
@@ -64,16 +117,8 @@ import Footer from '../components/Footer.astro';
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Photoshoot & Editorial Makeup",
-              "description": "Specialized techniques for commercial, branding, and editorial shoots."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "1:1 Lessons",
-              "description": "Master your own routine or refine your professional skills in a personalized hands-on session."
+              "name": "Groom & Men's Grooming",
+              "description": "Subtle skin prep, anti-shine treatment, light concealer, and professional hair styling."
             },
             "priceSpecification": {
               "@type": "UnitPriceSpecification",
@@ -92,60 +137,298 @@ import Footer from '../components/Footer.astro';
     <section id="menu" class="py-24 bg-alabaster reveal-up active">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-20">
-                <span class="text-xs tracking-[0.3em] uppercase text-neutral-400 block mb-4">Investment</span>
-                <h1 class="font-serif text-4xl lg:text-5xl text-neutral-900 mb-4">Signature Makeup Services &amp; Packages</h1>
-                <p class="text-sm uppercase tracking-widest text-taupe font-medium">Bespoke Bridal, Editorial &amp; Special Event Artistry in Vancouver</p>
+                <span class="text-sm tracking-[0.3em] uppercase text-neutral-500 block mb-5">Investment</span>
+                <h1 class="font-serif text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.15] text-balance text-neutral-900 mb-6">Signature Makeup Services &amp; Packages</h1>
+                <p class="text-base md:text-lg uppercase tracking-widest text-taupe font-medium">Bespoke Bridal, Editorial &amp; Special Event Artistry in Vancouver</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Package 1 -->
-                <div class="bg-white p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] flex flex-col h-full transition-transform duration-500 hover:-translate-y-2 hover:text-rose-600">
-                    <h3 class="font-serif text-[28px] leading-tight mb-5 ">Bridal &amp; Wedding</h3>
-                    <p class="text-[#968478] font-medium text-lg mb-1">From CAD 560</p>
-                    <p class="text-[#968478] font-medium text-sm mb-8 opacity-80">Trial CAD 280</p>
-                    <p class="text-neutral-500 text-[15px] leading-relaxed mb-12 flex-grow">A luxury experience including a detailed consultation, preview session, and on-site application on your wedding day.</p>
-                    <div class="mt-auto">
-                        <a href="#contact" class="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-800 mb-3" >BOOK BRIDAL</a>
-                        <div class="h-[1px] w-full bg-[#dcc4b6]"></div>
+            <div class="max-w-4xl mx-auto">
+
+                <!-- BRIDAL BEAUTY -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-5 mb-8">
+                        <h3 class="font-serif text-[clamp(1.5rem,4vw,2.5rem)] leading-tight text-balance text-neutral-900">Bridal Beauty</h3>
+                        <div class="h-[1px] flex-1 min-w-8 bg-[#dcc4b6]"></div>
                     </div>
+
+                    <div class="mb-8">
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <span class="text-[17px] md:text-lg font-medium text-neutral-900">Bridal Day-Of Hair &amp; Makeup</span>
+                            <span class="text-[10px] tracking-[0.2em] uppercase text-taupe border border-taupe/40 px-2 py-1 whitespace-nowrap">No Early Morning Fee</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]"></span>
+                            <span class="font-serif text-xl md:text-2xl text-[#8C7B70] whitespace-nowrap">CAD 560</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-2">
+                            <span class="text-[15px] md:text-base text-neutral-600">Makeup Only</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 360</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-1.5">
+                            <span class="text-[15px] md:text-base text-neutral-600">Hair Styling Only</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 220</span>
+                        </div>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Bespoke skin preparation
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Premium false lash application
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Long-wear setting
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Veil or hair accessory placement
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Complimentary early morning start
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-8">
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <span class="text-[17px] md:text-lg font-medium text-neutral-900">Bridal Preview &amp; Consultation <span class="font-normal text-[10px] tracking-[0.2em] uppercase text-taupe">(Trial)</span></span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]"></span>
+                            <span class="font-serif text-xl md:text-2xl text-[#8C7B70] whitespace-nowrap">CAD 280</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-2">
+                            <span class="text-[15px] md:text-base text-neutral-600">Makeup Preview Only</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 180</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-1.5">
+                            <span class="text-[15px] md:text-base text-neutral-600">Hair Styling Preview Only</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 110</span>
+                        </div>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Dedicated 2 to 2.5-hour session
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Design, customize &amp; perfect your wedding day look
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Highly recommended before the big day
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="inline-block text-xs font-bold tracking-[0.2em] uppercase text-neutral-800 hover:text-rose-600 transition-colors">Book Bridal</a>
                 </div>
 
-                <!-- Package 2 -->
-                <div class="bg-white p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] flex flex-col h-full transition-transform duration-500 hover:-translate-y-2 hover:text-rose-600">
-                    <h3 class="font-serif text-[28px] leading-tight mb-5">Events</h3>
-                    <p class="text-[#968478] font-medium mb-8 text-lg">From CAD 180 <span class="text-[10px] font-normal opacity-70">/ person</span></p>
-                    <p class="text-neutral-500 text-[15px] leading-relaxed mb-12 flex-grow">Cohesive, elegant looks for your loved ones that complement the overall bridal aesthetic.</p>
-                    <div class="mt-auto">
-                        <a href="#contact" class="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-800 mb-3" >BOOK PARTY</a>
-                        <div class="h-[1px] w-full bg-[#dcc4b6]"></div>
+                <!-- BRIDAL TOUCH-UP & VIP -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-5 mb-8">
+                        <h3 class="font-serif text-[clamp(1.5rem,4vw,2.5rem)] leading-tight text-balance text-neutral-900">Bridal Touch-Up &amp; VIP</h3>
+                        <div class="h-[1px] flex-1 min-w-8 bg-[#dcc4b6]"></div>
                     </div>
+
+                    <div class="mb-8">
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <span class="text-[17px] md:text-lg font-medium text-neutral-900">6-Hour Bridal Touch-Up Package</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]"></span>
+                            <span class="font-serif text-xl md:text-2xl text-[#8C7B70] whitespace-nowrap">CAD 800</span>
+                        </div>
+                        <ul class="mt-3 space-y-2">
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Complete Bridal Day-Of Hair &amp; Makeup
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Up to 6 hours of on-site touch-up &amp; support
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                1 extra hairstyle transition for your reception or dress switch
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-8">
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <span class="text-[17px] md:text-lg font-medium text-neutral-900">10-Hour VIP Bridal Package</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]"></span>
+                            <span class="font-serif text-xl md:text-2xl text-[#8C7B70] whitespace-nowrap">CAD 1,200</span>
+                        </div>
+                        <ul class="mt-3 space-y-2">
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Complete Bridal Day-Of Hair &amp; Makeup
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Up to 10 hours of full-day on-site touch-up &amp; support
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                2 extra hairstyle transitions for multi-outfit ceremonies &amp; receptions
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="inline-block text-xs font-bold tracking-[0.2em] uppercase text-neutral-800 hover:text-rose-600 transition-colors">Book Touch-Up &amp; VIP</a>
                 </div>
 
-                <!-- Package 3 -->
-                <div class="bg-white p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] flex flex-col h-full transition-transform duration-500 hover:-translate-y-2 hover:text-rose-600">
-                    <h3 class="font-serif text-[28px] leading-tight mb-5">Photoshoot</h3>
-                    <p class="text-[#968478] font-medium mb-8 text-lg">Rates per project</p>
-                    <p class="text-neutral-500 text-[15px] leading-relaxed mb-12 flex-grow">Specialized techniques for commercial, branding, and editorial shoots. Half-day and full-day rates available.</p>
-                    <div class="mt-auto">
-                        <a href="#contact" class="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-800 mb-3" >INQUIRE EDITORIAL</a>
-                        <div class="h-[1px] w-full bg-[#dcc4b6]"></div>
+                <!-- PHOTOSHOOT & EVENT BEAUTY -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-5 mb-8">
+                        <h3 class="font-serif text-[clamp(1.5rem,4vw,2.5rem)] leading-tight text-balance text-neutral-900">Photoshoot &amp; Event Beauty</h3>
+                        <div class="h-[1px] flex-1 min-w-8 bg-[#dcc4b6]"></div>
                     </div>
+
+                    <div class="mb-8">
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <span class="text-[17px] md:text-lg font-medium text-neutral-900">Photoshoot &amp; Event Hair &amp; Makeup</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]"></span>
+                            <span class="font-serif text-xl md:text-2xl text-[#8C7B70] whitespace-nowrap">CAD 180 – 240</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-2">
+                            <span class="text-[15px] md:text-base text-neutral-600">Makeup Only</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 120 – 150</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-1.5">
+                            <span class="text-[15px] md:text-base text-neutral-600">Hair Styling Only</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 80 – 110</span>
+                        </div>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Personal portraits, engagement shoots, maternity &amp; branding sessions
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Special galas &amp; events
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Rate customized based on styling requirements
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="inline-block text-xs font-bold tracking-[0.2em] uppercase text-neutral-800 hover:text-rose-600 transition-colors">Inquire Editorial</a>
                 </div>
 
-                <!-- Package 4 -->
-                <div class="bg-white p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] flex flex-col h-full transition-transform duration-500 hover:-translate-y-2 hover:text-rose-600">
-                    <h3 class="font-serif text-[28px] leading-tight mb-5">1:1 Lessons</h3>
-                    <p class="text-[#968478] font-medium mb-8 text-lg">From CAD 160 <span class="text-[10px] font-normal opacity-70">/ hour</span></p>
-                    <p class="text-neutral-500 text-[15px] leading-relaxed mb-12 flex-grow">Master your own routine or refine your professional skills in a personalized hands-on session.</p>
-                    <div class="mt-auto">
-                        <a href="#contact" class="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-800 mb-3" >LEARN MORE</a>
-                        <div class="h-[1px] w-full bg-[#dcc4b6]"></div>
+                <!-- BRIDAL PARTY & GUEST SERVICES -->
+                <div class="mb-16">
+                    <div class="flex items-center gap-5 mb-8">
+                        <h3 class="font-serif text-[clamp(1.5rem,4vw,2.5rem)] leading-tight text-balance text-neutral-900">Bridal Party &amp; Guest Services</h3>
+                        <div class="h-[1px] flex-1 min-w-8 bg-[#dcc4b6]"></div>
                     </div>
+
+                    <div class="mb-8">
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <span class="text-[17px] md:text-lg font-medium text-neutral-900">Bridal Party &amp; Guest Hair &amp; Makeup</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]"></span>
+                            <span class="font-serif text-xl md:text-2xl text-[#8C7B70] whitespace-nowrap">CAD 180</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-2">
+                            <span class="text-[15px] md:text-base text-neutral-600">Makeup Only</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 120</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-1.5">
+                            <span class="text-[15px] md:text-base text-neutral-600">Hair Styling Only</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 80</span>
+                        </div>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Full-face event makeup with false lashes
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Tailored hair styling
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                For bridesmaids, mothers &amp; special guests
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline gap-3 flex-wrap">
+                            <span class="text-[17px] md:text-lg font-medium text-neutral-900">Groom &amp; Men's Grooming</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]"></span>
+                            <span class="font-serif text-xl md:text-2xl text-[#8C7B70] whitespace-nowrap">CAD 100</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-2">
+                            <span class="text-[15px] md:text-base text-neutral-600">Makeup Only <span class="text-neutral-400">(Skin prep &amp; light coverage)</span></span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 70</span>
+                        </div>
+                        <div class="flex items-baseline gap-3 pl-5 mt-1.5">
+                            <span class="text-[15px] md:text-base text-neutral-600">Hair Styling Only</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">CAD 40</span>
+                        </div>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Subtle skin prep
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Anti-shine treatment
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Light concealer
+                            </li>
+                            <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                                <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                                Professional hair styling
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="inline-block text-xs font-bold tracking-[0.2em] uppercase text-neutral-800 mt-8 hover:text-rose-600 transition-colors">Book Party &amp; Groom</a>
                 </div>
+
             </div>
-            
-            <div class="mt-16 text-center">
-                <p class="text-neutral-400 text-sm font-light">* Travel fees apply for locations outside Vancouver &amp; Lower Mainland BC. Bridal trials are highly recommended.</p>
+
+            <!-- GOOD TO KNOW -->
+            <div class="mt-20 max-w-4xl mx-auto">
+                <div class="bg-white/70 border border-[#dcc4b6]/40 px-8 py-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-sm tracking-[0.3em] uppercase text-taupe whitespace-nowrap">Good to Know</span>
+                        <div class="h-[1px] flex-1 min-w-8 bg-[#dcc4b6]"></div>
+                    </div>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
+                        <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                            <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                            Premium false lashes included with all makeup services.
+                        </li>
+                        <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                            <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                            No early start fees for brides.
+                        </li>
+                        <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                            <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                            Travel fees apply to all mobile bookings, calculated by distance &amp; venue accessibility.
+                        </li>
+                        <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                            <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                            A non-refundable deposit &amp; signed agreement are required to lock in your date.
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
