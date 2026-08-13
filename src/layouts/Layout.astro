@@ -63,8 +63,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://veramake
     {preloadImage && <link rel="preload" as="image" imagesrcset={preloadImage} imagesizes="100vw" fetchpriority="high" />}
     <link rel="preload" as="style" href="/css/bootstrap-icons.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/bootstrap-icons.css"></noscript>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
 </head>
 <body class="bg-alabaster text-neutral-800 font-sans selection:bg-rosegold selection:text-white overflow-x-clip">
     <slot />

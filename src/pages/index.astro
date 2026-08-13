@@ -131,7 +131,7 @@ const firstHeroSrcset = firstHeroAvif
                                     style="object-position: center 30%;"
                                     loading={index === 0 ? "eager" : "lazy"}
                                     fetchpriority={index === 0 ? "high" : "low"}
-                                    decoding={index === 0 ? "sync" : "async"}
+                                    decoding="async"
                                 />
                             </picture>
                         </div>
@@ -312,7 +312,7 @@ const firstHeroSrcset = firstHeroAvif
                                 {SITE_MEDIA.home.portfolioGallery.map((item) => (
                     <a href="/portfolio/" class={`${item.colSpanClass} relative group overflow-hidden block`} >
                         <picture>
-                    {localAvif(item.url) && <source srcset={localAvif(item.url)} type="image/avif" />}
+                    {localAvif(item.url) && <source srcset={`${localAvif(item.url).replace(/\.avif$/, '-m.avif')} 800w, ${localAvif(item.url)} 1600w`} sizes="(min-width: 768px) 45vw, 100vw" type="image/avif" />}
                     <img src={item.url} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={item.alt} loading="lazy" decoding="async" />
                 </picture>
                         <div class="absolute inset-0 bg-neutral-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
@@ -343,11 +343,11 @@ const firstHeroSrcset = firstHeroAvif
                     <div class="space-y-6 group">
                         <div class="grid grid-cols-2 gap-2 overflow-hidden rounded-sm luxury-shadow">
                 <picture>
-                    {localAvif(item.beforeUrl) && <source srcset={localAvif(item.beforeUrl)} type="image/avif" />}
+                    {localAvif(item.beforeUrl) && <source srcset={`${localAvif(item.beforeUrl).replace(/\.avif$/, '-m.avif')} 800w, ${localAvif(item.beforeUrl)} 1600w`} sizes="(min-width: 768px) 25vw, 45vw" type="image/avif" />}
                     <img src={item.beforeUrl} class="w-full grayscale group-hover:grayscale-0 transition-all duration-700" alt={item.beforeAlt} loading="lazy" decoding="async" />
                 </picture>
                 <picture>
-                    {localAvif(item.afterUrl) && <source srcset={localAvif(item.afterUrl)} type="image/avif" />}
+                    {localAvif(item.afterUrl) && <source srcset={`${localAvif(item.afterUrl).replace(/\.avif$/, '-m.avif')} 800w, ${localAvif(item.afterUrl)} 1600w`} sizes="(min-width: 768px) 25vw, 45vw" type="image/avif" />}
                     <img src={item.afterUrl} class="w-full" alt={item.afterAlt} loading="lazy" decoding="async" />
                 </picture>
                         </div>
