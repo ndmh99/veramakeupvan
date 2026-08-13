@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         alabaster: '#F9F7F5',
-        taupe: '#8C7B70',
+        taupe: '#7A6A5F',
         rosegold: '#E2C2B3',
         deeprose: '#C9A99B',
         rose: '#A8583A',

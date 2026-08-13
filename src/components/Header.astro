@@ -30,14 +30,14 @@ const mobileNavClass = (isActive: boolean) =>
 
         <div class="absolute left-1/2 -translate-x-1/2">
             <a href="/" class="font-serif text-2xl tracking-tighter font-medium text-neutral-900">
-                VERA<span class="text-deeprose italic">MAKEUP</span>
+                VERA<span class="text-roseDeep italic">MAKEUP</span>
             </a>
         </div>
 
         <div class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase text-neutral-600">
             <a href="/about/" class={navClass(isAbout)}>About</a>
             <a href="/blog/" class={navClass(isBlog)}>Blog</a>
-            <a href="/contact/" class="bg-rosegold text-white px-6 py-3 rounded-sm hover:bg-deeprose transition-all luxury-shadow">
+            <a href="/contact/" class="bg-rosegold text-neutral-900 px-6 py-3 rounded-sm hover:bg-deeprose transition-all luxury-shadow">
                 Contact
             </a>        </div>
 
@@ -51,9 +51,9 @@ const mobileNavClass = (isActive: boolean) =>
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-alabaster/95 backdrop-blur-xl lg:hidden hidden">
         <div class="relative h-full w-full">
             <div class="flex items-center justify-between px-6 h-20 border-b border-neutral-200">
-                <a href="/" class="font-serif text-xl tracking-tighter font-medium text-neutral-900">
-                    VERA<span class="text-deeprose italic">MAKEUP</span>
-                </a>
+            <a href="/" class="font-serif text-xl tracking-tighter font-medium text-neutral-900">
+                VERA<span class="text-roseDeep italic">MAKEUP</span>
+            </a>
                 <button id="close-menu-btn" class="flex items-center justify-center aspect-square pr-3 pl-3 p-2 rounded-full border border-neutral-200 bg-white/70 hover:bg-white transition-colors text-neutral-900" aria-label="Close Menu">
                     <i class="bi bi-x-lg text-xl leading-[0.75] text-deeprose"></i>
                 </button>
@@ -84,7 +84,7 @@ const mobileNavClass = (isActive: boolean) =>
                         <i class={`bi bi-arrow-right ${isBlog ? "text-taupe" : "text-neutral-400"}`}></i>
                     </a>
                     <div class="pt-4">
-                        <a href="/contact/" class="mobile-nav-link bg-rosegold text-white px-10 py-4 rounded-sm hover:bg-deeprose transition-all luxury-shadow text-center w-full block">
+                        <a href="/contact/" class="mobile-nav-link bg-rosegold text-neutral-900 px-10 py-4 rounded-sm hover:bg-deeprose transition-all luxury-shadow text-center w-full block">
                             Contact
                         </a>
                         <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-500 text-center mt-4">

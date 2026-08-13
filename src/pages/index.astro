@@ -78,6 +78,7 @@ const firstHeroSrcset = firstHeroAvif
     </script>
     <Header />
     
+<main>
 <!-- HERO SECTION -->
     <section class="relative min-h-screen flex items-center pt-20 reveal-up active">
         <div class="grid grid-cols-1 lg:grid-cols-2 w-full h-full min-h-[calc(100vh-80px)]">
@@ -141,9 +142,10 @@ const firstHeroSrcset = firstHeroAvif
                 <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
                     {heroSliderImages.map((_, i) => (
                         <button 
-                            class={`w-2 h-2 rounded-full border border-white transition-all hero-dot ${i === 0 ? 'bg-white w-5' : 'bg-white/40'}`}
+                            class="relative w-6 h-6 flex items-center justify-center hero-dot"
                             data-index={i}
                             aria-label={`Go to slide ${i + 1}`}
+                            <span class={`w-2 h-2 rounded-full border border-white transition-all ${i === 0 ? 'bg-white w-5' : 'bg-white/40'}`}></span>
                         ></button>
                     ))}
                 </div>
@@ -314,7 +316,7 @@ const firstHeroSrcset = firstHeroAvif
                     <img src={item.url} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={item.alt} loading="lazy" decoding="async" />
                 </picture>
                         <div class="absolute inset-0 bg-neutral-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
-                            <h4 class="font-serif text-2xl mb-2">{item.title}</h4>
+                            <h3 class="font-serif text-2xl mb-2">{item.title}</h3>
                             <span class="text-sm tracking-widest uppercase">View this full look <i class="bi bi-arrow-right ml-2"></i></span>
                         </div>
                     </a>
@@ -466,7 +468,7 @@ const firstHeroSrcset = firstHeroAvif
     <section id="contact" class="py-40 bg-taupe text-alabaster overflow-hidden relative reveal-up active">
         <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
             <h2 class="font-serif text-5xl lg:text-7xl mb-8">Ready for Makeup That Feels <br> Like You—<span class="italic">Just Elevated?</span></h2>
-            <p class="text-lg mb-12 max-w-2xl mx-auto text-alabaster/80 leading-relaxed">
+            <p class="text-lg mb-12 max-w-2xl mx-auto text-alabaster leading-relaxed">
                 Tell me about your date, venue, and style vision. I'll respond with availability and next steps within 24 hours.
             </p>
             <div class="flex flex-col items-center space-y-6">
@@ -479,10 +481,9 @@ const firstHeroSrcset = firstHeroAvif
             </div>
         </div>
         <!-- Decorative Background Element -->
-        <div class="absolute -bottom-20 -right-20 text-[20vw] font-serif italic text-white opacity-5 pointer-events-none whitespace-nowrap">
-            Modern Elegance
-        </div>
+        <div class="absolute -bottom-20 -right-20 w-[40vw] h-[20vh] bg-white/5 pointer-events-none" aria-hidden="true"></div>
     </section>
+</main>
 
     <!-- FOOTER -->
     
