@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_MEDIA } from '../config/media.ts';
+import { localAvif } from '../lib/img.ts';
 
 const heroSliderImages = SITE_MEDIA.home.heroSlider;
 ---
@@ -26,7 +27,7 @@ const heroSliderImages = SITE_MEDIA.home.heroSlider;
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Vera Makeup Studio",
-        "image": "https://veramakeupvan.com/assets/images/thumbnail.png",
+        "image": "https://veramakeupvan.com/assets/images/thumbnail.jpg",
         "@id": "https://veramakeupvan.com/#business",
         "url": "https://veramakeupvan.com/",
         "telephone": "+17789510631",
@@ -115,15 +116,18 @@ const heroSliderImages = SITE_MEDIA.home.heroSlider;
                 <div id="hero-slider" class="hero-slider-container absolute inset-0 flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
                     {heroSliderImages.map((image, index) => (
                         <div class="flex-shrink-0 w-full h-full snap-start relative">
-                             <img 
-                                src={image.url} 
-                                alt={image.alt}
-                                class="w-full h-full object-cover object-top"
-                                style="object-position: center 30%;"
-                                loading={index === 0 ? "eager" : "lazy"}
-                                fetchpriority={index === 0 ? "high" : "low"}
-                                decoding={index === 0 ? "sync" : "async"}
-                            />
+                            <picture>
+                                {localAvif(image.url) && <source srcset={localAvif(image.url)} type="image/avif" />}
+                                <img 
+                                    src={image.url} 
+                                    alt={image.alt}
+                                    class="w-full h-full object-cover object-top"
+                                    style="object-position: center 30%;"
+                                    loading={index === 0 ? "eager" : "lazy"}
+                                    fetchpriority={index === 0 ? "high" : "low"}
+                                    decoding={index === 0 ? "sync" : "async"}
+                                />
+                            </picture>
                         </div>
                     ))}
                 </div>
@@ -300,7 +304,10 @@ const heroSliderImages = SITE_MEDIA.home.heroSlider;
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[900px]">
                                 {SITE_MEDIA.home.portfolioGallery.map((item) => (
                     <a href="/portfolio/" class={`${item.colSpanClass} relative group overflow-hidden block`} >
-                        <img src={item.url} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={item.alt} loading="lazy" decoding="async" />
+                        <picture>
+                    {localAvif(item.url) && <source srcset={localAvif(item.url)} type="image/avif" />}
+                    <img src={item.url} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={item.alt} loading="lazy" decoding="async" />
+                </picture>
                         <div class="absolute inset-0 bg-neutral-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8 text-white">
                             <h4 class="font-serif text-2xl mb-2">{item.title}</h4>
                             <span class="text-sm tracking-widest uppercase">View this full look <i class="bi bi-arrow-right ml-2"></i></span>
@@ -328,8 +335,14 @@ const heroSliderImages = SITE_MEDIA.home.heroSlider;
                                 {SITE_MEDIA.home.transformations.map((item) => (
                     <div class="space-y-6 group">
                         <div class="grid grid-cols-2 gap-2 overflow-hidden rounded-sm luxury-shadow">
-                            <img src={item.beforeUrl} class="w-full grayscale group-hover:grayscale-0 transition-all duration-700" alt={item.beforeAlt} loading="lazy" decoding="async" />
-                            <img src={item.afterUrl} class="w-full" alt={item.afterAlt} loading="lazy" decoding="async" />
+                <picture>
+                    {localAvif(item.beforeUrl) && <source srcset={localAvif(item.beforeUrl)} type="image/avif" />}
+                    <img src={item.beforeUrl} class="w-full grayscale group-hover:grayscale-0 transition-all duration-700" alt={item.beforeAlt} loading="lazy" decoding="async" />
+                </picture>
+                <picture>
+                    {localAvif(item.afterUrl) && <source srcset={localAvif(item.afterUrl)} type="image/avif" />}
+                    <img src={item.afterUrl} class="w-full" alt={item.afterAlt} loading="lazy" decoding="async" />
+                </picture>
                         </div>
                         <p class="text-center text-xs tracking-widest uppercase font-bold text-neutral-600">{item.label}</p>
                     </div>

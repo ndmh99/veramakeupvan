@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_MEDIA } from '../config/media.ts';
+import { localAvif } from '../lib/img.ts';
 ---
 
 <Layout 
@@ -43,13 +44,16 @@ import { SITE_MEDIA } from '../config/media.ts';
               
                                 {SITE_MEDIA.portfolio.gallery.map((item) => (
                     <div class="relative group overflow-hidden break-inside-avoid gallery-item transition-opacity duration-500 cursor-pointer" data-tag={item.tags[0]} data-src={item.url}>
-                        <img 
-                            src={item.url} 
-                            alt={item.alt} 
-                            class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" 
-                            loading="lazy" 
-                            decoding="async" 
-                        />
+                        <picture>
+                            {localAvif(item.url) && <source srcset={localAvif(item.url)} type="image/avif" />}
+                            <img 
+                                src={item.url} 
+                                alt={item.alt} 
+                                class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" 
+                                loading="lazy" 
+                                decoding="async" 
+                            />
+                        </picture>
                         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 pointer-events-none">
                             <span class="text-[10px] tracking-widest text-rosegold uppercase mb-2">{item.category}</span>
                             <h3 class="text-white font-serif text-2xl italic">{item.title}</h3>

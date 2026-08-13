@@ -4,7 +4,7 @@ description: "From Hycroft Manor to the Rosewood Hotel Georgia — our insider g
 excerpt: "From Hycroft Manor to the Rosewood Hotel Georgia — our insider guide to the top 10 Vancouver wedding venues with bridal makeup tips tailored to each unique setting."
 date: 2026-07-25
 category: "Venue Guide"
-coverImage: "/blog/images/venue-1.png"
+coverImage: "/blog/images/venue-1.webp"
 coverAlt: "Hycroft Manor wedding venue in Vancouver"
 ---
 
@@ -16,7 +16,7 @@ Here is our insider guide to the **Top 10 Vancouver Wedding Venues**, along with
 
 ## 1. Hycroft Manor (Shaughnessy)
 
-![Hycroft Manor wedding venue in Vancouver](/blog/images/venue-1.png)
+![Hycroft Manor wedding venue in Vancouver](/blog/images/venue-1.webp)
 
 A grand Edwardian mansion boasting historic European columns, charming terraces, and manicured gardens. It is the epitome of classic elegance.
 
@@ -25,7 +25,7 @@ A grand Edwardian mansion boasting historic European columns, charming terraces,
 
 ## 2. Stanley Park Pavilion & Formal Gardens
 
-![Stanley Park Pavilion wedding venue in Vancouver](/blog/images/venue-2.png)
+![Stanley Park Pavilion wedding venue in Vancouver](/blog/images/venue-2.webp)
 
 Located in the heart of world-famous Stanley Park, this heritage venue offers lush greenery, forest backdrops, and romantic outdoor lawn ceremonies.
 
@@ -34,7 +34,7 @@ Located in the heart of world-famous Stanley Park, this heritage venue offers lu
 
 ## 3. Brock House Restaurant (Jericho Beach)
 
-![Brock House Restaurant wedding venue in Vancouver](/blog/images/venue-3.png)
+![Brock House Restaurant wedding venue in Vancouver](/blog/images/venue-3.webp)
 
 Situated right on the edge of Jericho Beach, Brock House combines beachside ocean views, sweeping lawns, and historic charm.
 
@@ -43,7 +43,7 @@ Situated right on the edge of Jericho Beach, Brock House combines beachside ocea
 
 ## 4. Fairmont Pacific Rim (Downtown Waterfront)
 
-![Fairmont Pacific Rim wedding venue in Vancouver](/blog/images/venue-4.png)
+![Fairmont Pacific Rim wedding venue in Vancouver](/blog/images/venue-4.webp)
 
 An ultra-luxurious, modern hotel featuring soaring glass windows, harbour views, and opulent ballroom spaces.
 
@@ -52,7 +52,7 @@ An ultra-luxurious, modern hotel featuring soaring glass windows, harbour views,
 
 ## 5. Cecil Green Park House (UBC Campus)
 
-![Cecil Green Park House wedding venue in Vancouver](/blog/images/venue-5.png)
+![Cecil Green Park House wedding venue in Vancouver](/blog/images/venue-5.webp)
 
 A stunning heritage house perched on the cliffs of Point Grey overlooking the Georgia Strait, surrounded by private gardens.
 
@@ -61,7 +61,7 @@ A stunning heritage house perched on the cliffs of Point Grey overlooking the Ge
 
 ## 6. Brix & Mortar (Yaletown)
 
-![Brix and Mortar wedding venue in Vancouver](/blog/images/venue-6.png)
+![Brix and Mortar wedding venue in Vancouver](/blog/images/venue-6.webp)
 
 An iconic Yaletown venue famous for its glass-covered outdoor courtyard, exposed brick walls, trailing ivy, and intimate chandelier-lit dining rooms.
 
@@ -70,7 +70,7 @@ An iconic Yaletown venue famous for its glass-covered outdoor courtyard, exposed
 
 ## 7. The Polygon Gallery (North Vancouver)
 
-![The Polygon Gallery wedding venue in Vancouver](/blog/images/venue-7.png)
+![The Polygon Gallery wedding venue in Vancouver](/blog/images/venue-7.webp)
 
 A striking modern architectural venue situated at Lonsdale Quay with floor-to-ceiling glass windows and unmatched views of the Vancouver city skyline.
 
@@ -79,7 +79,7 @@ A striking modern architectural venue situated at Lonsdale Quay with floor-to-ce
 
 ## 8. Sunway / Dr. Sun Yat-Sen Classical Chinese Garden (Chinatown)
 
-![Dr. Sun Yat-Sen Classical Chinese Garden wedding venue in Vancouver](/blog/images/venue-8.png)
+![Dr. Sun Yat-Sen Classical Chinese Garden wedding venue in Vancouver](/blog/images/venue-8.webp)
 
 North America's first traditional Chinese garden, featuring covered walkways, tranquil jade-green ponds, and intricate stone architecture.
 
@@ -88,7 +88,7 @@ North America's first traditional Chinese garden, featuring covered walkways, tr
 
 ## 9. Swaneset Bay Resort & Country Club (Pitt Meadows)
 
-![Swaneset Bay Resort wedding venue in Vancouver](/blog/images/venue-9.png)
+![Swaneset Bay Resort wedding venue in Vancouver](/blog/images/venue-9.webp)
 
 A breathtaking 65,000-square-foot chateau clubhouse surrounded by sweeping golf greens and dramatic mountain ranges. Popular for both Western and large multi-day cultural celebrations.
 
@@ -97,7 +97,7 @@ A breathtaking 65,000-square-foot chateau clubhouse surrounded by sweeping golf 
 
 ## 10. Rosewood Hotel Georgia (Downtown)
 
-![Rosewood Hotel Georgia wedding venue in Vancouver](/blog/images/venue-10.png)
+![Rosewood Hotel Georgia wedding venue in Vancouver](/blog/images/venue-10.webp)
 
 A landmark venue that exudes 1920s Roaring Twenties glamour, featuring dark wood paneling, crystal chandeliers, and vintage art deco architecture.
 

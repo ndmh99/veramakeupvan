@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_MEDIA } from '../../config/media.ts';
+import { localAvif } from '../../lib/img.ts';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -44,7 +45,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://veramake
 
             <div class="mt-8 mb-8 flex flex-wrap items-center justify-between gap-x-6 gap-y-4">
                 <div class="flex items-center gap-3">
-                    <img src={SITE_MEDIA.brand.profilePic} alt="Vera Makeup Studio" class="w-11 h-11 rounded-full object-cover border border-neutral-200" />
+                    <picture>
+                        {localAvif(SITE_MEDIA.brand.profilePic) && <source srcset={localAvif(SITE_MEDIA.brand.profilePic)} type="image/avif" />}
+                        <img src={SITE_MEDIA.brand.profilePic} alt="Vera Makeup Studio" class="w-11 h-11 rounded-full object-cover border border-neutral-200" />
+                    </picture>
                     <div class="flex flex-col gap-0.5">
                         <p class="font-semibold text-sm text-neutral-900">Vera Makeup Studio</p>
                         <p class="text-xs text-neutral-500">{formattedDate} · {post.data.category}</p>
@@ -60,7 +64,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://veramake
 
             <h1 class="font-serif text-4xl lg:text-5xl text-neutral-900 leading-tight">{post.data.title}</h1>
 
-            <img src={post.data.coverImage} alt={post.data.coverAlt} class="w-full rounded-sm border border-neutral-200 my-10" />
+            <picture>
+                {localAvif(post.data.coverImage) && <source srcset={localAvif(post.data.coverImage)} type="image/avif" />}
+                <img src={post.data.coverImage} alt={post.data.coverAlt} class="w-full rounded-sm border border-neutral-200 my-10" />
+            </picture>
 
             <nav id="toc-inline" aria-label="Table of contents" class="hidden lg:hidden mb-10">
                 <div class="bg-white border border-neutral-200 rounded-sm p-6">
