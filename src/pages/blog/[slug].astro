@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { SITE_MEDIA } from '../../config/media.ts';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -31,23 +32,51 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://veramake
 >
     <Header />
 
-    <main class="pt-24 bg-slate-50">
+    <div id="reading-progress" class="fixed top-0 inset-x-0 h-[3px] z-[60] pointer-events-none" aria-hidden="true">
+        <div id="reading-progress-inner" class="h-full w-full bg-rose" style="transform: scaleX(0);"></div>
+    </div>
+
+    <main class="pt-24 bg-alabaster">
         <div class="max-w-3xl mx-auto px-6 py-16">
-            <a href="/blog/" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-taupe hover:text-deeprose transition-colors">
-                <i class="bi bi-arrow-left"></i> Back to Blog
+            <a href="/blog/" class="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-taupe hover:text-roseDeep transition-colors">
+                <i class="bi bi-arrow-left" aria-hidden="true"></i> Back to Blog
             </a>
 
-            <div class="mt-8 mb-6 flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.25em] text-taupe font-medium">
-                <span class="bg-white border border-neutral-200 rounded-sm px-3 py-1">{post.data.category}</span>
-                <span>{formattedDate}</span>
+            <div class="mt-8 mb-8 flex flex-wrap items-center justify-between gap-x-6 gap-y-4">
+                <div class="flex items-center gap-3">
+                    <img src={SITE_MEDIA.brand.profilePic} alt="Vera Makeup Studio" class="w-11 h-11 rounded-full object-cover border border-neutral-200" />
+                    <div class="flex flex-col gap-0.5">
+                        <p class="font-semibold text-sm text-neutral-900">Vera Makeup Studio</p>
+                        <p class="text-xs text-neutral-500">{formattedDate} · {post.data.category}</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2" role="group" aria-label="Share this article">
+                    <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalURL.href)}`} target="_blank" rel="noopener" aria-label="Share on Facebook" class="share-btn"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+                    <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalURL.href)}&text=${encodeURIComponent(post.data.title)}`} target="_blank" rel="noopener" aria-label="Share on X" class="share-btn"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/veramakeupvan" target="_blank" rel="noopener" aria-label="Share on Instagram" class="share-btn"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                    <button id="copy-link-btn" type="button" aria-label="Copy article link" class="share-btn cursor-pointer"><i class="bi bi-link-45deg" aria-hidden="true"></i></button>
+                </div>
             </div>
 
             <h1 class="font-serif text-4xl lg:text-5xl text-neutral-900 leading-tight">{post.data.title}</h1>
 
             <img src={post.data.coverImage} alt={post.data.coverAlt} class="w-full rounded-sm border border-neutral-200 my-10" />
 
-            <div class="blog-prose">
-                <Content />
+            <nav id="toc-inline" aria-label="Table of contents" class="hidden lg:hidden mb-10">
+                <div class="bg-white border border-neutral-200 rounded-sm p-6">
+                    <p class="text-xs uppercase tracking-[0.25em] text-taupe font-medium mb-4">In This Article</p>
+                    <ul id="toc-inline-list" class="space-y-1"></ul>
+                </div>
+            </nav>
+
+            <div class="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-14 lg:items-start">
+                <aside id="toc-sidebar" aria-label="Table of contents" class="hidden lg:block lg:sticky lg:top-28">
+                    <p class="text-xs uppercase tracking-[0.25em] text-taupe font-medium mb-4">In This Article</p>
+                    <ul id="toc-sidebar-list" class="space-y-1"></ul>
+                </aside>
+                <div class="blog-prose min-w-0">
+                    <Content />
+                </div>
             </div>
 
             <div class="mt-16 pt-8 border-t border-neutral-200 text-center">
@@ -80,125 +109,84 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://veramake
             "url": "https://veramakeupvan.com"
         }
     })} />
+
+    <script is:inline>
+        document.addEventListener('astro:page-load', () => {
+            const bar = document.getElementById('reading-progress');
+            const inner = document.getElementById('reading-progress-inner');
+            if (!bar || !inner) return;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                bar.remove();
+                return;
+            }
+            const update = () => {
+                const total = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = total > 0 ? Math.min(window.scrollY / total, 1) : 0;
+                inner.style.transform = `scaleX(${progress})`;
+            };
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update, { passive: true });
+            update();
+        });
+    </script>
+
+    <script is:inline>
+        document.addEventListener('astro:page-load', () => {
+            const headings = Array.from(document.querySelectorAll('.blog-prose h2'));
+            const inlineList = document.getElementById('toc-inline-list');
+            const sidebarList = document.getElementById('toc-sidebar-list');
+            const inlineNav = document.getElementById('toc-inline');
+            const sidebarNav = document.getElementById('toc-sidebar');
+            if (!headings.length || !inlineList || !sidebarList) return;
+
+            const linkClass = 'block text-sm text-neutral-600 border-l-2 border-transparent pl-3 py-1.5 hover:text-rose hover:border-neutral-300 transition-colors';
+            const tocHtml = headings
+                .map((h) => `<li><a href="#${h.id}" class="${linkClass}">${h.textContent}</a></li>`)
+                .join('');
+            inlineList.innerHTML = tocHtml;
+            sidebarList.innerHTML = tocHtml;
+            if (inlineNav) inlineNav.classList.remove('hidden');
+            if (sidebarNav) sidebarNav.classList.remove('hidden');
+
+            const links = [...inlineList.querySelectorAll('a'), ...sidebarList.querySelectorAll('a')];
+            const setActive = (id) => {
+                links.forEach((l) => l.classList.toggle('toc-active', l.getAttribute('href') === `#${id}`));
+            };
+            const spy = new IntersectionObserver((entries) => {
+                const visible = entries.filter((e) => e.isIntersecting);
+                if (visible.length) setActive(visible[0].target.id);
+            }, { rootMargin: '-96px 0px -70% 0px', threshold: 0 });
+            headings.forEach((h) => spy.observe(h));
+
+            const copyBtn = document.getElementById('copy-link-btn');
+            if (copyBtn) {
+                copyBtn.addEventListener('click', async () => {
+                    const icon = copyBtn.querySelector('i');
+                    const url = window.location.href;
+                    let copied = false;
+                    try {
+                        await navigator.clipboard.writeText(url);
+                        copied = true;
+                    } catch {
+                        const ta = document.createElement('textarea');
+                        ta.value = url;
+                        ta.style.position = 'fixed';
+                        ta.style.opacity = '0';
+                        document.body.appendChild(ta);
+                        ta.select();
+                        copied = document.execCommand('copy');
+                        ta.remove();
+                    }
+                    if (copied) {
+                        icon.className = 'bi bi-check2';
+                        copyBtn.classList.add('text-rose');
+                        window.setTimeout(() => {
+                            icon.className = 'bi bi-link-45deg';
+                            copyBtn.classList.remove('text-rose');
+                        }, 2000);
+                    }
+                });
+            }
+        });
+    </script>
 </Layout>
-
-<style>
-    .blog-prose h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.75rem;
-        line-height: 1.3;
-        color: #171717;
-        margin-top: 3.5rem;
-        margin-bottom: 1.25rem;
-        padding-bottom: 0.6rem;
-        border-bottom: 1px solid #e5e5e5;
-    }
-
-    .blog-prose h3 {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.35rem;
-        line-height: 1.35;
-        color: #171717;
-        margin-top: 2.25rem;
-        margin-bottom: 0.9rem;
-    }
-
-    .blog-prose p {
-        color: #525252;
-        line-height: 1.8;
-        margin-bottom: 1.25rem;
-    }
-
-    .blog-prose strong {
-        color: #171717;
-        font-weight: 600;
-    }
-
-    .blog-prose a {
-        color: #b76e4b;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        transition: color 0.2s;
-    }
-
-    .blog-prose a:hover {
-        color: #9c4f2f;
-    }
-
-    .blog-prose ul {
-        list-style: disc;
-        padding-left: 1.5rem;
-        margin-bottom: 1.5rem;
-        color: #525252;
-        line-height: 1.8;
-    }
-
-    .blog-prose ol {
-        list-style: decimal;
-        padding-left: 1.5rem;
-        margin-bottom: 1.5rem;
-        color: #525252;
-        line-height: 1.8;
-    }
-
-    .blog-prose li {
-        margin-bottom: 0.5rem;
-    }
-
-    .blog-prose li::marker {
-        color: #b76e4b;
-    }
-
-    .blog-prose blockquote {
-        border-left: 3px solid #b76e4b;
-        padding-left: 1.25rem;
-        margin: 1.75rem 0;
-        font-style: italic;
-        color: #737373;
-    }
-
-    .blog-prose img {
-        width: 100%;
-        height: auto;
-        border-radius: 0.25rem;
-        margin: 2rem 0;
-        border: 1px solid #e5e5e5;
-    }
-
-    .blog-prose table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1.75rem 0;
-        font-size: 0.9rem;
-        background: #ffffff;
-        border: 1px solid #e5e5e5;
-        border-radius: 0.25rem;
-        overflow: hidden;
-    }
-
-    .blog-prose th {
-        background: #fafafa;
-        color: #171717;
-        font-weight: 600;
-        text-align: left;
-        padding: 0.75rem 1rem;
-        border-bottom: 1px solid #e5e5e5;
-    }
-
-    .blog-prose td {
-        color: #525252;
-        padding: 0.75rem 1rem;
-        border-bottom: 1px solid #f0f0f0;
-        vertical-align: top;
-    }
-
-    .blog-prose tr:last-child td {
-        border-bottom: none;
-    }
-
-    .blog-prose hr {
-        border: none;
-        border-top: 1px solid #e5e5e5;
-        margin: 2.5rem 0;
-    }
-</style>

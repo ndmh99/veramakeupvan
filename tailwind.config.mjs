@@ -8,6 +8,8 @@ export default {
         taupe: '#8C7B70',
         rosegold: '#E2C2B3',
         deeprose: '#C9A99B',
+        rose: '#A8583A',
+        roseDeep: '#9C4F2F',
       },
       fontFamily: {
         serif: ['Playfair Display', 'serif'],
