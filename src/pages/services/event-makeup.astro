@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServicePage from '../../components/ServicePage.astro';
+---
+
+<Layout
+    title="Event & Party Makeup Vancouver | Special Occasion Makeup — Vera Makeup Studio"
+    description="Special event and party makeup in Vancouver. Glamorous, long-wearing occasion makeup for galas, birthdays, celebrations, and every moment worth getting dressed up for."
+    type="website"
+>
+    <Header />
+    <ServicePage
+        eyebrow="Events"
+        title="Event & Party Makeup in Vancouver"
+        intro={[
+            "Whether it's a black-tie gala, a milestone birthday, a graduation, or a celebration you simply want to glow for — event makeup in Vancouver should feel polished, effortless, and built to last the whole night.",
+            "I create occasion-ready looks ranging from fresh natural glam to full editorial glam, always tailored to your outfit, venue lighting, and how long you plan to celebrate. Premium false lashes and long-wear setting are included with every makeup service, so your look stays flawless through dinner, dancing, and photos.",
+            "I also offer groom and men's grooming services — subtle skin prep, anti-shine treatment, and light coverage — so the whole party photographs beautifully together."
+        ]}
+        pricing={[
+            { label: "Event Hair & Makeup", price: "CAD 180 – 240", sub: [
+                { label: "Makeup Only", price: "CAD 120 – 150" },
+                { label: "Hair Styling Only", price: "CAD 80 – 110" }
+            ] },
+            { label: "Groom & Men's Grooming", price: "CAD 100", sub: [
+                { label: "Makeup Only (Skin prep & light coverage)", price: "CAD 70" },
+                { label: "Hair Styling Only", price: "CAD 40" }
+            ] }
+        ]}
+        includes={[
+            "Full-face occasion makeup with premium false lashes",
+            "Long-wear setting for all-night hold",
+            "Bespoke look tailored to your outfit and venue lighting",
+            "Subtle skin prep and anti-shine treatment for men",
+            "On-site mobile service across Vancouver and the Lower Mainland"
+        ]}
+        gallery={[
+            { url: "/assets/images/619075404_17950572528076828_4445315055610910648_n.jpg", alt: "Birthday glam with a modern twist" },
+            { url: "/assets/images/631676385_17953867065076828_3479980789610926207_n.jpg", alt: "Sharp edgy event glam makeup" },
+            { url: "/assets/images/590413618_17946577410076828_1732165925111980959_n.jpg", alt: "Maternity portrait glow event makeup" },
+            { url: "/assets/images/1770177369227_processed.jpeg", alt: "Radiant event-ready skin glow" }
+        ]}
+        faq={[
+            { q: "How far in advance should I book event makeup?", a: "A few weeks' notice is ideal for weekends and evenings. For large parties or group bookings, reach out even earlier so we can plan the schedule." },
+            { q: "Do you do group or bridal party makeup?", a: "Yes — I provide hair and makeup for groups attending galas, parties, and wedding parties. Rates for party members are customized based on the number of people and styling requirements." },
+            { q: "Can you match my look to my dress or theme?", a: "Absolutely. Tell me about your outfit, the venue, and the vibe you're going for, and I'll design a look that complements them perfectly." }
+        ]}
+        ctaLabel="Got a celebration coming up?"
+        schema={{
+            name: "Event and Party Makeup in Vancouver",
+            description: "Special occasion and party makeup services by Vera Makeup Studio in Vancouver, BC, including groom grooming.",
+            priceRange: "CAD 40 - CAD 240"
+        }}
+    />
+    <Footer />
+</Layout>

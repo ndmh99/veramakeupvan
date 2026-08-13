@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+    title="Contact Vera Makeup Studio | Book Bridal & Event Makeup in Vancouver"
+    description="Contact Vera Makeup Studio in Vancouver, BC. Text or email to check availability for bridal, event, and editorial makeup services across the Lower Mainland."
+    type="website"
+>
+    <Header />
+
+    <main class="pt-32 pb-24 bg-alabaster min-h-screen">
+        <div class="max-w-4xl mx-auto px-6">
+            <span class="text-taupe tracking-[0.2em] text-[10px] uppercase font-bold mb-4 block">Contact</span>
+            <h1 class="font-serif text-4xl lg:text-5xl text-neutral-900 mb-6">Let's Design Your Look</h1>
+            <p class="text-neutral-500 leading-relaxed max-w-xl mb-14">
+                To maintain a bespoke experience for every client, I accept a limited number of commissions per season. Text or email to check availability for your date.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+                <a href="sms:+17789510631" class="group bg-white border border-neutral-200 rounded-sm p-8 hover:border-rosegold transition-colors">
+                    <i class="bi bi-chat-dots text-3xl text-taupe mb-5 block" aria-hidden="true"></i>
+                    <h2 class="font-serif text-xl text-neutral-900 mb-2">Text Message</h2>
+                    <p class="text-sm text-neutral-500 leading-relaxed">(+1) 778-951-0631<br />Fastest response — text only</p>
+                    <span class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-rose group-hover:text-roseDeep transition-colors">
+                        Text to Book <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </span>
+                </a>
+
+                <a href="mailto:veramakeupvan@gmail.com" class="group bg-white border border-neutral-200 rounded-sm p-8 hover:border-rosegold transition-colors">
+                    <i class="bi bi-envelope text-3xl text-taupe mb-5 block" aria-hidden="true"></i>
+                    <h2 class="font-serif text-xl text-neutral-900 mb-2">Email</h2>
+                    <p class="text-sm text-neutral-500 leading-relaxed">veramakeupvan@gmail.com<br />For all inquiries &amp; quotes</p>
+                    <span class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-rose group-hover:text-roseDeep transition-colors">
+                        Send an Email <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </span>
+                </a>
+
+                <a href="https://www.instagram.com/veramakeupvan/" target="_blank" rel="noopener" class="group bg-white border border-neutral-200 rounded-sm p-8 hover:border-rosegold transition-colors">
+                    <i class="bi bi-instagram text-3xl text-taupe mb-5 block" aria-hidden="true"></i>
+                    <h2 class="font-serif text-xl text-neutral-900 mb-2">Instagram</h2>
+                    <p class="text-sm text-neutral-500 leading-relaxed">@veramakeupvan<br />See recent work &amp; behind the scenes</p>
+                    <span class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-rose group-hover:text-roseDeep transition-colors">
+                        Follow Along <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </div>
+
+            <div class="bg-white/70 border border-[#dcc4b6]/40 px-8 py-8 mb-14">
+                <h2 class="font-serif text-2xl text-neutral-900 mb-4">Service Area</h2>
+                <p class="text-neutral-600 leading-relaxed mb-4">
+                    Based in Vancouver, BC — serving Metro Vancouver and the Lower Mainland, including Richmond, Burnaby, New Westminster, North &amp; South Vancouver, Surrey, and surrounding areas. Travel fees apply to mobile bookings and are calculated by distance and venue accessibility.
+                </p>
+                <p class="text-sm text-neutral-500 italic">Please note: Text only. Phone calls are not accepted.</p>
+            </div>
+
+            <div class="text-center">
+                <p class="text-sm text-neutral-500 mb-4">Before booking, please review my <a href="/policies/" class="text-rose hover:text-roseDeep underline underline-offset-4 transition-colors">Booking Policies &amp; FAQ</a>.</p>
+                <a href="/services/" class="inline-block bg-neutral-900 text-white px-10 py-4 text-sm tracking-widest uppercase hover:bg-neutral-800 transition-all">
+                    View Services &amp; Pricing
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

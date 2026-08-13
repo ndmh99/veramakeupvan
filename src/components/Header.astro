@@ -37,10 +37,9 @@ const mobileNavClass = (isActive: boolean) =>
         <div class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-widest uppercase text-neutral-600">
             <a href="/about/" class={navClass(isAbout)}>About</a>
             <a href="/blog/" class={navClass(isBlog)}>Blog</a>
-            <a href="/services/#contact" class="bg-rosegold text-white px-6 py-3 rounded-sm hover:bg-deeprose transition-all luxury-shadow">
+            <a href="/contact/" class="bg-rosegold text-white px-6 py-3 rounded-sm hover:bg-deeprose transition-all luxury-shadow">
                 Contact
-            </a>
-        </div>
+            </a>        </div>
 
         <!-- Mobile Menu Toggle -->
         <button id="mobile-menu-btn" class="lg:hidden text-2xl text-neutral-900" aria-label="Toggle Menu">
@@ -85,7 +84,7 @@ const mobileNavClass = (isActive: boolean) =>
                         <i class={`bi bi-arrow-right ${isBlog ? "text-taupe" : "text-neutral-400"}`}></i>
                     </a>
                     <div class="pt-4">
-                        <a href="/services/#contact" class="mobile-nav-link bg-rosegold text-white px-10 py-4 rounded-sm hover:bg-deeprose transition-all luxury-shadow text-center w-full block">
+                        <a href="/contact/" class="mobile-nav-link bg-rosegold text-white px-10 py-4 rounded-sm hover:bg-deeprose transition-all luxury-shadow text-center w-full block">
                             Contact
                         </a>
                         <p class="text-[10px] tracking-[0.2em] uppercase text-neutral-500 text-center mt-4">

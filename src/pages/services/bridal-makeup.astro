@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServicePage from '../../components/ServicePage.astro';
+---
+
+<Layout
+    title="Bridal Makeup Artist Vancouver | Wedding Makeup — Vera Makeup Studio"
+    description="Vancouver bridal makeup artist for modern brides. Day-of wedding hair & makeup, bridal trials, and full-day VIP touch-up packages across Metro Vancouver."
+    type="website"
+>
+    <Header />
+    <ServicePage
+        eyebrow="Bridal"
+        title="Bridal Makeup Artist in Vancouver"
+        intro={[
+            "Your wedding morning should feel calm, pampered, and entirely yours. As a dedicated Vancouver bridal makeup artist, I specialize in luminous, long-wearing wedding makeup designed to photograph beautifully from your first look to the last dance — no matter Vancouver's coastal weather.",
+            "Every bridal booking includes a bespoke skin preparation, premium false lashes, and a long-wear setting system that holds through humidity, tears of joy, and hours of celebration. A bridal preview session is highly recommended so we can design and perfect your look before the big day.",
+            "With no early-morning fees for brides, on-site mobile service across Vancouver and the Lower Mainland, and a limited number of commissions per season, my bridal dates book out early for the summer months — reach out to check availability."
+        ]}
+        pricing={[
+            { label: "Bridal Day-Of Hair & Makeup", price: "CAD 560", note: "No Early Morning Fee", sub: [
+                { label: "Makeup Only", price: "CAD 360" },
+                { label: "Hair Styling Only", price: "CAD 220" }
+            ] },
+            { label: "Bridal Preview & Consultation (Trial)", price: "CAD 280", sub: [
+                { label: "Makeup Preview Only", price: "CAD 180" },
+                { label: "Hair Styling Preview Only", price: "CAD 110" }
+            ] },
+            { label: "6-Hour Bridal Touch-Up Package", price: "CAD 800" },
+            { label: "10-Hour VIP Bridal Package", price: "CAD 1,200" }
+        ]}
+        includes={[
+            "Bespoke skin preparation tailored to your skin type",
+            "Premium false lash application",
+            "Long-wear setting spray for all-day hold",
+            "Veil or hair accessory placement",
+            "Complimentary early morning start for brides",
+            "Dedicated 2 to 2.5-hour bridal preview session"
+        ]}
+        gallery={[
+            { url: "/assets/images/657635148_18312009700260376_4394911214516583714_n.jpg", alt: "Soft romantic bridal makeup with pink tones in Vancouver" },
+            { url: "/assets/images/640879426_17855526456669202_6485400723038558735_n.jpg", alt: "Timeless bridal and groom glam on wedding day" },
+            { url: "/assets/images/487065797_18353503606198237_6167806536187609368_n.jpg", alt: "Spring blossom bridal makeup look" },
+            { url: "/assets/images/642185999_17954754873076828_6762105100846163168_n.jpg", alt: "Studio bridal elegance makeup" }
+        ]}
+        faq={[
+            { q: "Should I book a bridal trial before my wedding day?", a: "Yes — a bridal preview is highly recommended. It gives us 2 to 2.5 hours to design your exact wedding look, test product longevity on your skin, and finalize your palette so there are no surprises on the day." },
+            { q: "Do you travel to my venue?", a: "Yes. I provide mobile bridal services across Vancouver and the Lower Mainland. Travel fees apply to all mobile bookings and are calculated by distance and venue accessibility." },
+            { q: "How far in advance should I book?", a: "Summer and fall weekends book out earliest. I recommend securing your date 6 to 9 months ahead, with your trial scheduled 2 to 3 months before the wedding." },
+            { q: "How do I confirm my date?", a: "A non-refundable deposit and a signed agreement are required to lock in your wedding date. Reach out by text or email and I'll send over the details." }
+        ]}
+        ctaLabel="Ready for your wedding day glow?"
+        schema={{
+            name: "Bridal Makeup Artist in Vancouver",
+            description: "Bridal day-of hair and makeup, trials, and VIP touch-up packages by Vera Makeup Studio in Vancouver, BC.",
+            priceRange: "CAD 360 - CAD 1,200"
+        }}
+    />
+    <Footer />
+</Layout>

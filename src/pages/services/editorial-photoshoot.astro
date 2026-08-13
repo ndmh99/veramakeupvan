@@ -1,0 +1,54 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServicePage from '../../components/ServicePage.astro';
+---
+
+<Layout
+    title="Editorial & Photoshoot Makeup Vancouver | Commercial Makeup — Vera Makeup Studio"
+    description="Editorial, commercial, and photoshoot makeup in Vancouver. Camera-ready, flash-safe makeup for portraits, engagement shoots, maternity, branding, and editorial sets."
+    type="website"
+>
+    <Header />
+    <ServicePage
+        eyebrow="Editorial"
+        title="Editorial & Photoshoot Makeup in Vancouver"
+        intro={[
+            "Great photography starts with skin that reads beautifully in camera. As an editorial and photoshoot makeup artist in Vancouver, I bring a skin-first, camera-conscious approach to every session — from personal portraits and engagement shoots to maternity, branding, and full editorial productions.",
+            "I understand how light, shadow, and flash interact with makeup. Techniques are chosen for the set: flash-safe powders to avoid white flashback, buildable coverage that never looks heavy on camera, and finishes that hold through long shoots and outfit changes.",
+            "Rates are customized based on the complexity of the styling and the scope of the shoot. Whether it's a clean beauty look for your headshots or a bold, concept-driven editorial look, I'll design makeup that serves your creative vision."
+        ]}
+        pricing={[
+            { label: "Photoshoot & Editorial Hair & Makeup", price: "CAD 180 – 240", sub: [
+                { label: "Makeup Only", price: "CAD 120 – 150" },
+                { label: "Hair Styling Only", price: "CAD 80 – 110" }
+            ] }
+        ]}
+        includes={[
+            "Camera-ready, flash-safe makeup techniques",
+            "Bespoke look designed around your concept and wardrobe",
+            "Skin-first prep for high-definition and 4K capture",
+            "Long-wear setting for extended shoots",
+            "On-set or in-studio service in Vancouver and the Lower Mainland"
+        ]}
+        gallery={[
+            { url: "/assets/images/561747428_17940025602076828_6388442360195163444_n.jpg", alt: "Creative editorial makeup for photoshoot" },
+            { url: "/assets/images/636875944_17953884657076828_5981471355297940121_n.jpg", alt: "Dynamic editorial pose with camera-ready makeup" },
+            { url: "/assets/images/496175391_17922210231076828_6907336814250855333_n.jpg", alt: "Backstage editorial eyeshadow look" },
+            { url: "/assets/images/481389644_17913459666076828_1655266379001749674_n.jpg", alt: "Femme fatale editorial makeup look" }
+        ]}
+        faq={[
+            { q: "Do you work on commercial shoots and editorials?", a: "Yes. I work on personal portrait sessions, engagement and maternity shoots, branding sessions, and editorial productions. Tell me about the shoot and I'll tailor the makeup to the brief." },
+            { q: "Will my makeup look natural in photos?", a: "Yes — I use flash-safe techniques and build coverage that looks fresh in person and in camera. We'll test the look under your shoot's lighting when needed." },
+            { q: "Can I book makeup for a maternity or engagement session?", a: "Of course. These are some of my favourite sessions — soft, luminous, skin-first looks that photograph beautifully and feel like you." }
+        ]}
+        ctaLabel="Have a shoot in mind?"
+        schema={{
+            name: "Editorial and Photoshoot Makeup in Vancouver",
+            description: "Editorial, commercial, and photoshoot makeup services by Vera Makeup Studio in Vancouver, BC.",
+            priceRange: "CAD 80 - CAD 240"
+        }}
+    />
+    <Footer />
+</Layout>

@@ -1,0 +1,146 @@
+---
+import { localAvif } from '../lib/img.ts';
+
+interface PriceRow {
+    label: string;
+    price: string;
+    note?: string;
+    sub?: { label: string; price: string }[];
+}
+
+interface Props {
+    eyebrow: string;
+    title: string;
+    intro: string[];
+    pricing: PriceRow[];
+    includes: string[];
+    gallery: { url: string; alt: string }[];
+    faq: { q: string; a: string }[];
+    ctaLabel: string;
+    schema: {
+        name: string;
+        description: string;
+        priceRange: string;
+    };
+}
+
+const { eyebrow, title, intro, pricing, includes, gallery, faq, ctaLabel, schema } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://veramakeupvan.com");
+---
+
+<main class="pt-24 bg-alabaster">
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <span class="text-xs tracking-[0.3em] uppercase text-taupe font-medium block mb-4">{eyebrow}</span>
+        <h1 class="font-serif text-4xl lg:text-5xl text-neutral-900 leading-tight mb-8">{title}</h1>
+        <div class="space-y-5 text-neutral-600 leading-relaxed">
+            {intro.map((p) => <p>{p}</p>)}
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="max-w-4xl mx-auto px-6 pb-16">
+        <h2 class="font-serif text-3xl text-neutral-900 mb-8">Investment</h2>
+        <div class="space-y-8">
+            {pricing.map((row) => (
+                <div>
+                    <div class="flex items-baseline gap-3 flex-wrap">
+                        <span class="text-[17px] md:text-lg font-medium text-neutral-900">{row.label}</span>
+                        {row.note && <span class="text-[10px] tracking-[0.2em] uppercase text-taupe border border-taupe/40 px-2 py-1 whitespace-nowrap">{row.note}</span>}
+                        <span class="flex-1 border-b border-dotted border-[#dcc4b6]"></span>
+                        <span class="font-serif text-xl md:text-2xl text-[#8C7B70] whitespace-nowrap">{row.price}</span>
+                    </div>
+                    {row.sub?.map((s) => (
+                        <div class="flex items-baseline gap-3 pl-5 mt-2">
+                            <span class="text-[15px] md:text-base text-neutral-600">{s.label}</span>
+                            <span class="flex-1 border-b border-dotted border-[#dcc4b6]/70"></span>
+                            <span class="text-[15px] md:text-base text-[#8C7B70] whitespace-nowrap">{s.price}</span>
+                        </div>
+                    ))}
+                </div>
+            ))}
+        </div>
+
+        <h2 class="font-serif text-2xl text-neutral-900 mt-12 mb-6">Every Session Includes</h2>
+        <ul class="space-y-2.5">
+            {includes.map((item) => (
+                <li class="flex items-start gap-3 text-[15px] md:text-base text-neutral-600 leading-relaxed">
+                    <span class="mt-[7px] h-1 w-1 rounded-full bg-rosegold flex-shrink-0"></span>
+                    {item}
+                </li>
+            ))}
+        </ul>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="max-w-6xl mx-auto px-6 pb-16">
+        <h2 class="font-serif text-3xl text-neutral-900 mb-8">Recent Work</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {gallery.map((img) => (
+                <picture class="overflow-hidden rounded-sm">
+                    {localAvif(img.url) && <source srcset={localAvif(img.url)} type="image/avif" />}
+                    <img src={img.url} alt={img.alt} class="w-full aspect-[4/5] object-cover" loading="lazy" decoding="async" />
+                </picture>
+            ))}
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-4xl mx-auto px-6 pb-16">
+        <h2 class="font-serif text-3xl text-neutral-900 mb-8">Frequently Asked Questions</h2>
+        <div class="divide-y divide-neutral-200 border-y border-neutral-200">
+            {faq.map((item) => (
+                <details class="group py-5">
+                    <summary class="flex items-center justify-between cursor-pointer text-neutral-900 font-medium text-[15px] list-none">
+                        {item.q}
+                        <i class="bi bi-plus-lg text-taupe group-open:hidden" aria-hidden="true"></i>
+                        <i class="bi bi-dash-lg text-taupe hidden group-open:block" aria-hidden="true"></i>
+                    </summary>
+                    <p class="mt-3 text-neutral-500 text-sm leading-relaxed">{item.a}</p>
+                </details>
+            ))}
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-4xl mx-auto px-6 pb-24">
+        <div class="bg-[#111111] py-16 px-8 text-center relative overflow-hidden shadow-2xl">
+            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-white/[0.02] blur-[120px] rounded-full -mr-32 -mt-32"></div>
+            <div class="relative z-10">
+                <h2 class="font-serif text-3xl md:text-4xl text-white italic mb-4 leading-tight">{ctaLabel}</h2>
+                <p class="text-neutral-400 text-sm leading-relaxed max-w-xl mx-auto mb-8">I am currently accepting commissions for the season. Reach out to check availability for your date.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="mailto:veramakeupvan@gmail.com" class="w-full sm:w-auto px-10 py-4 bg-white text-neutral-900 text-[10px] font-bold tracking-[0.25em] uppercase transition-all duration-500 hover:bg-rosegold hover:text-white">
+                        Inquire via Email
+                    </a>
+                    <a href="sms:+17789510631" class="w-full sm:w-auto px-10 py-4 border border-neutral-800 text-white text-[10px] font-bold tracking-[0.25em] uppercase transition-all duration-500 hover:border-white/40 hover:bg-white/5">
+                        Text to Book
+                    </a>
+                </div>
+                <p class="text-[10px] text-rosegold italic tracking-wider mt-4">* Please note: Text only. Phone calls are not accepted.</p>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": schema.name,
+        "description": schema.description,
+        "serviceType": title,
+        "url": canonicalURL.href,
+        "areaServed": "Vancouver, BC, Canada",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Vera Makeup Studio",
+            "url": "https://veramakeupvan.com",
+            "telephone": "+1-778-951-0631",
+            "email": "veramakeupvan@gmail.com",
+            "priceRange": schema.priceRange
+        },
+        "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock"
+        }
+    })} />
+</main>

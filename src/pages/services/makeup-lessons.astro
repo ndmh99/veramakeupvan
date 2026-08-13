@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServicePage from '../../components/ServicePage.astro';
+---
+
+<Layout
+    title="1:1 Makeup Lessons Vancouver | Learn Pro Makeup — Vera Makeup Studio"
+    description="Private one-on-one makeup lessons in Vancouver. Learn professional techniques for your own face — skin prep, foundation, eyes, and everyday-to-glam looks."
+    type="website"
+>
+    <Header />
+    <ServicePage
+        eyebrow="Learn"
+        title="1:1 Makeup Lessons in Vancouver"
+        intro={[
+            "Makeup should work for your face, your features, and your routine — not the other way around. My private one-on-one makeup lessons in Vancouver teach you professional techniques applied to your own face, so you leave with skills you can actually use every day.",
+            "We'll cover skin preparation, foundation matching and placement, brows, eyes, lashes, and a signature look designed around your features and lifestyle. Bring your own makeup bag and I'll help you edit it, or use my professional kit while you learn.",
+            "Lessons take place at my studio in Vancouver and are personalized to your goals — whether you want an everyday natural look, a polished professional look, or a glam look for special occasions."
+        ]}
+        pricing={[
+            { label: "Private 1:1 Makeup Lesson", price: "CAD 150" },
+            { label: "Beginner Essentials Lesson (90 min)", price: "CAD 180" },
+            { label: "Everyday to Glam Masterclass (2.5 hrs)", price: "CAD 250" }
+        ]}
+        includes={[
+            "Personalized curriculum based on your features and goals",
+            "Hands-on guidance with step-by-step technique",
+            "Product recommendations tailored to your skin and budget",
+            "Professional kit available to use during the lesson",
+            "Digital look notes and practice plan to take home"
+        ]}
+        gallery={[
+            { url: "/assets/images/472900156_1123171446169237_5899368313192126858_n.jpg", alt: "Polished and powerful K-beauty glow makeup result" },
+            { url: "/assets/images/642539340_18308384371260376_8853081048275970786_n.jpg", alt: "Professional luminous makeup look" },
+            { url: "/assets/images/1770175905391_2a5f734405cd6dc786a894458763177a.jpg", alt: "Soft glam makeup result from natural to glam" },
+            { url: "/assets/images/1770175965094_0c87cc2c07dc82d935124734f1432e79.jpg", alt: "Daytime minimal makeup look" }
+        ]}
+        faq={[
+            { q: "Do I need to bring my own makeup?", a: "No. You can use my professional kit during the lesson. If you'd like to learn with your own products, bring your bag and I'll help you make the most of what you have." },
+            { q: "Are lessons beginner friendly?", a: "Yes — lessons are tailored to your level, from complete beginners to experienced makeup wearers wanting to refine their technique." },
+            { q: "Where do lessons take place?", a: "Lessons are held at my studio in Vancouver. Group lessons for friends or bridal parties can also be arranged." }
+        ]}
+        ctaLabel="Ready to master your own makeup?"
+        schema={{
+            name: "1:1 Makeup Lessons in Vancouver",
+            description: "Private one-on-one makeup lessons by Vera Makeup Studio in Vancouver, BC, teaching professional techniques on your own face.",
+            priceRange: "CAD 150 - CAD 250"
+        }}
+    />
+    <Footer />
+</Layout>
