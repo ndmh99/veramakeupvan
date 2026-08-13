@@ -6,11 +6,16 @@ import { SITE_MEDIA } from '../config/media.ts';
 import { localAvif } from '../lib/img.ts';
 
 const heroSliderImages = SITE_MEDIA.home.heroSlider;
+const firstHeroAvif = localAvif(heroSliderImages[0].url);
+const firstHeroSrcset = firstHeroAvif
+    ? `${firstHeroAvif.replace(/\.avif$/, '-m.avif')} 800w, ${firstHeroAvif.replace(/\.avif$/, '-md.avif')} 1080w, ${firstHeroAvif} 1600w`
+    : undefined;
 ---
 
 <Layout 
     title="Sophisticated Bridal & Editorial Makeup Artist | Vancouver, BC"
     description="Vera Makeup Studio: Specializing in effortless, editorial glam for modern brides. Top-rated luxury makeup artist in Metro Vancouver and surrounding areas."
+    preloadImage={firstHeroSrcset}
 >
     <style>
         .hero-slider-container {
@@ -117,7 +122,7 @@ const heroSliderImages = SITE_MEDIA.home.heroSlider;
                     {heroSliderImages.map((image, index) => (
                         <div class="flex-shrink-0 w-full h-full snap-start relative">
                             <picture>
-                                {localAvif(image.url) && <source srcset={localAvif(image.url)} type="image/avif" />}
+                                {localAvif(image.url) && <source srcset={`${localAvif(image.url).replace(/\.avif$/, '-m.avif')} 800w, ${localAvif(image.url).replace(/\.avif$/, '-md.avif')} 1080w, ${localAvif(image.url)} 1600w`} sizes="100vw" type="image/avif" />}
                                 <img 
                                     src={image.url} 
                                     alt={image.alt}
@@ -421,7 +426,34 @@ const heroSliderImages = SITE_MEDIA.home.heroSlider;
                         </a>
                     </div>
                 </blockquote>
-                <script async src="//platform.instagram.com/en_US/embeds.js"></script>
+                <script is:inline>
+                // Load Instagram embeds only when the embed scrolls into view
+                const loadIgEmbeds = () => {
+                    const block = document.querySelector('.instagram-media');
+                    if (block && !document.getElementById('ig-embeds-script')) {
+                        const s = document.createElement('script');
+                        s.id = 'ig-embeds-script';
+                        s.src = '//platform.instagram.com/en_US/embeds.js';
+                        s.async = true;
+                        document.body.appendChild(s);
+                    }
+                    if (typeof window.instgrm !== 'undefined') window.instgrm.Embeds.process();
+                };
+                if ('IntersectionObserver' in window) {
+                    const target = document.querySelector('.instagram-media');
+                    if (target) {
+                        const obs = new IntersectionObserver((entries) => {
+                            if (entries.some((e) => e.isIntersecting)) {
+                                loadIgEmbeds();
+                                obs.disconnect();
+                            }
+                        }, { rootMargin: '600px' });
+                        obs.observe(target);
+                    }
+                } else {
+                    loadIgEmbeds();
+                }
+            </script>
             </div>
             
             <div class="mt-12 text-center">

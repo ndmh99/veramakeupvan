@@ -16,7 +16,7 @@ export const SITE_MEDIA = {
                 "title": "Wildflower Blush"
             },
             {
-                "url": "https://static.wixstatic.com/media/c04a33_937f9351fb534e59bc4e892fca7b3811~mv2.jpg",
+                "url": "/assets/images/happy-wedding-glow.jpg",
                 "alt": "Bridal makeup radiance",
                 "title": "Happy Wedding Glow"
             },
@@ -212,7 +212,7 @@ export const SITE_MEDIA = {
                 ]
             },
             {
-                "url": "https://static.wixstatic.com/media/c04a33_937f9351fb534e59bc4e892fca7b3811~mv2.jpg",
+                "url": "/assets/images/happy-wedding-glow.jpg",
                 "alt": "Bridal makeup radiance",
                 "category": "Bridal",
                 "title": "Happy Wedding Glow",
