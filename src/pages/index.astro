@@ -138,17 +138,13 @@ const firstHeroSrcset = firstHeroAvif
                     ))}
                 </div>
                 
-                <!-- Slider Dots -->
-                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
-                    {heroSliderImages.map((_, i) => (
-                        <button 
-                            class="relative w-6 h-6 flex items-center justify-center hero-dot"
-                            data-index={i}
-                            aria-label={`Go to slide ${i + 1}`}
-                            <span class={`w-2 h-2 rounded-full border border-white transition-all ${i === 0 ? 'bg-white w-5' : 'bg-white/40'}`}></span>
-                        ></button>
-                    ))}
-                </div>
+                <!-- Slider Arrows -->
+                <button class="hero-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center border border-white/40 text-white hover:border-white hover:bg-white/10 backdrop-blur-sm transition-all rounded-full opacity-0 group-hover/hero:opacity-100 focus-visible:opacity-100 pointer-events-none group-hover/hero:pointer-events-auto focus-visible:pointer-events-auto" aria-label="Previous slide">
+                    <i class="bi bi-chevron-left text-xl" aria-hidden="true"></i>
+                </button>
+                <button class="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center border border-white/40 text-white hover:border-white hover:bg-white/10 backdrop-blur-sm transition-all rounded-full opacity-0 group-hover/hero:opacity-100 focus-visible:opacity-100 pointer-events-none group-hover/hero:pointer-events-auto focus-visible:pointer-events-auto" aria-label="Next slide">
+                    <i class="bi bi-chevron-right text-xl" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -156,25 +152,14 @@ const firstHeroSrcset = firstHeroAvif
     <script is:inline>
       const initHeroSlider = () => {
         const slider = document.getElementById('hero-slider');
-        const dots = document.querySelectorAll('.hero-dot');
-        if (!slider || dots.length === 0) return;
+        const prevBtn = document.querySelector('.hero-prev');
+        const nextBtn = document.querySelector('.hero-next');
+        if (!slider || !prevBtn || !nextBtn) return;
 
         let currentIndex = 0;
-        const totalSlides = dots.length;
+        const totalSlides = slider.children.length;
         let interval;
         let isUserInteracting = false;
-
-        const updateDots = (index) => {
-          dots.forEach((dot, i) => {
-            if (i === index) {
-              dot.classList.add('bg-white', 'w-5');
-              dot.classList.remove('bg-white/40');
-            } else {
-              dot.classList.remove('bg-white', 'w-5');
-              dot.classList.add('bg-white/40');
-            }
-          });
-        };
 
         const goToSlide = (index) => {
           if (index < 0 || index >= totalSlides) return;
@@ -183,7 +168,6 @@ const firstHeroSrcset = firstHeroAvif
             left: slider.offsetWidth * index,
             behavior: 'smooth'
           });
-          updateDots(index);
         };
 
         const nextSlide = () => {
@@ -208,7 +192,6 @@ const firstHeroSrcset = firstHeroAvif
                 const index = Math.round(slider.scrollLeft / slider.offsetWidth);
                 if (index !== currentIndex && index >= 0 && index < totalSlides) {
                     currentIndex = index;
-                    updateDots(currentIndex);
                 }
             }, 100);
         };
@@ -235,12 +218,14 @@ const firstHeroSrcset = firstHeroAvif
         slider.addEventListener('mouseup', resume);
         slider.addEventListener('mouseleave', resume);
 
-        // Dot clicks
-        dots.forEach((dot, i) => {
-          dot.addEventListener('click', () => {
-            goToSlide(i);
-            startAutoSlide();
-          });
+        // Arrow clicks
+        prevBtn.addEventListener('click', () => {
+          goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+          startAutoSlide();
+        });
+        nextBtn.addEventListener('click', () => {
+          nextSlide();
+          startAutoSlide();
         });
 
         // Initialize
@@ -481,7 +466,9 @@ const firstHeroSrcset = firstHeroAvif
             </div>
         </div>
         <!-- Decorative Background Element -->
-        <div class="absolute -bottom-20 -right-20 w-[40vw] h-[20vh] bg-white/5 pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute -bottom-20 -right-20 text-[20vw] font-serif italic text-white opacity-5 pointer-events-none whitespace-nowrap" aria-hidden="true">
+            Modern Elegance
+        </div>
     </section>
 </main>
 
