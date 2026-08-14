@@ -20,7 +20,12 @@ import Footer from '../components/Footer.astro';
         "name": "Vera Makeup Studio",
         "image": "https://veramakeupvan.com/assets/images/thumbnail.jpg",
         "telephone": "+17789510631",
-        "url": "https://veramakeupvan.com"
+        "url": "https://veramakeupvan.com",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 49.28270,
+          "longitude": -123.12070
+        }
       },
       "areaServed": [
         "Vancouver",
@@ -128,6 +133,18 @@ import Footer from '../components/Footer.astro';
           }
         ]
       }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://veramakeupvan.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://veramakeupvan.com/services/" }
+      ]
     }
     </script>
     

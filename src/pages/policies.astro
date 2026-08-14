@@ -32,5 +32,19 @@ import Footer from '../components/Footer.astro';
             </div>
         </div>
     </main>
+
+    <!-- QAPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "QAPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do retainers and payments work?", "acceptedAnswer": { "@type": "Answer", "text": "A non-refundable and non-transferable retainer fee, along with a signed contract, is required to secure your wedding date. No date will be held without both. The remaining balance is due prior to the day of the event." } },
+        { "@type": "Question", "name": "What is the cancellation policy?", "acceptedAnswer": { "@type": "Answer", "text": "Cancellations must be made in writing via email. The retainer is entirely non-refundable in the event of a cancellation. If the client cancels within 30 days of the event, the final balance is still legally required to be paid in full." } },
+        { "@type": "Question", "name": "Do you charge travel fees?", "acceptedAnswer": { "@type": "Answer", "text": "Travel fees apply for locations outside of the Vancouver limit based on mileage. Any parking fees (valet, hotel parking) incurred on the day of the event will be directed to the final invoice." } },
+        { "@type": "Question", "name": "What if I have allergies or skin conditions?", "acceptedAnswer": { "@type": "Answer", "text": "It is the client's responsibility to report any skin conditions, allergies, or prior negative reactions to specific cosmetic brands before the application. The artist is not responsible for allergic reactions to products if no prior warning is given." } }
+      ]
+    }
+    </script>
     <Footer />
 </Layout>
