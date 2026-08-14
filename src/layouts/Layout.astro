@@ -75,6 +75,25 @@ document.addEventListener('submit', (e) => {
         gtag('event', 'booking_start', { method: 'form' });
     }
 });
+
+// Load gtag.js only after the page is interactive so analytics never
+// blocks the critical rendering path. The gtag() stub above queues
+// every event, so nothing is lost while the real script is pending.
+const loadGtag = () => {
+    if (document.getElementById('ga-script')) return;
+    const s = document.createElement('script');
+    s.id = 'ga-script';
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}';
+    s.async = true;
+    document.body.appendChild(s);
+};
+if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadGtag, { timeout: 2500 });
+} else {
+    window.addEventListener('load', loadGtag);
+}
+// Failsafe so analytics always loads even if idle/load stalls.
+setTimeout(loadGtag, 4000);
 `;
 ---
 
@@ -124,10 +143,7 @@ document.addEventListener('submit', (e) => {
 
     <!-- Google Analytics 4 (production only) -->
     {import.meta.env.PROD && (
-        <>
-            <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
-            <script is:inline set:html={gaScript} />
-        </>
+        <script is:inline set:html={gaScript} />
     )}
 
 </head>
