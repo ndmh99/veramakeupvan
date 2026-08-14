@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { GA_MEASUREMENT_ID } from '../config/analytics';
 import '../styles/style.css';
 import '@fontsource/dm-sans/300.css';
 import '@fontsource/dm-sans/400.css';
@@ -38,6 +39,43 @@ const pageNames: Record<string, string> = {
     '/terms/': 'Terms of Service',
 };
 const breadcrumbName = pageNames[Astro.url.pathname];
+
+// GA4 inline script (built in frontmatter so the Measurement ID interpolates reliably)
+const gaScript = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_MEASUREMENT_ID}', { anonymize_ip: true });
+
+// The site uses Astro view transitions (client-side navigation),
+// so GA4 doesn't fire page_view automatically on page changes.
+// Send one manually after each navigation (skipping the first load,
+// which gtag('config') already reports).
+let __firstPageLoad = true;
+document.addEventListener('astro:page-load', () => {
+    if (__firstPageLoad) { __firstPageLoad = false; return; }
+    gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: location.href,
+        page_path: location.pathname
+    });
+});
+
+// Vera's booking funnel: text-to-book (sms:), email, and forms.
+// Track every one as a "booking_start" event so you can see which
+// campaign (UTM) actually drives inquiries.
+document.addEventListener('click', (e) => {
+    const el = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!el || !el.href) return;
+    if (el.href.startsWith('sms:')) gtag('event', 'booking_start', { method: 'sms' });
+    else if (el.href.startsWith('mailto:')) gtag('event', 'booking_start', { method: 'email' });
+});
+document.addEventListener('submit', (e) => {
+    if (e.target && e.target.matches && e.target.matches('form')) {
+        gtag('event', 'booking_start', { method: 'form' });
+    }
+});
+`;
 ---
 
 <!DOCTYPE html>
@@ -83,6 +121,14 @@ const breadcrumbName = pageNames[Astro.url.pathname];
     {preloadImage && <link rel="preload" as="image" imagesrcset={preloadImage} imagesizes="100vw" fetchpriority="high" />}
     <link rel="preload" as="style" href="/css/bootstrap-icons.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/bootstrap-icons.css"></noscript>
+
+    <!-- Google Analytics 4 (production only) -->
+    {import.meta.env.PROD && (
+        <>
+            <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+            <script is:inline set:html={gaScript} />
+        </>
+    )}
 
 </head>
 <body class="bg-alabaster text-neutral-800 font-sans selection:bg-rosegold selection:text-white overflow-x-clip">
