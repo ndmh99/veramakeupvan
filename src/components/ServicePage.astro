@@ -165,7 +165,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://veramake
         "mainEntity": faq.map((item) => ({
             "@type": "Question",
             "name": item.q,
-            "acceptedAnswer": { "@type": "Answer", "text": item.a }
+            "text": item.q,
+            "answerCount": 1,
+            "datePublished": "2026-01-01",
+            "author": {
+                "@type": "Person",
+                "name": "Vera Makeup Studio"
+            },
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a,
+                "datePublished": "2026-01-01",
+                "upvoteCount": 0,
+                "url": canonicalURL.href,
+                "author": {
+                    "@type": "Person",
+                    "name": "Vera Makeup Studio"
+                }
+            }
         }))
     })} />
 </main>
